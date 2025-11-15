@@ -1,26 +1,33 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
+import db, { initDB } from "./config/db.js";
 
-import authRoutes from "./routes/authRoutes.js";
-import ticketRoutes from "./routes/ticketRoutes.js";
-import agentRoutes from "./routes/agentRoutes.js";
+console.log("RUNNING CORRECT INDEX.JS");
 
-dotenv.config();
+async function startServer() {
+  const app = express();
+  app.use(cors());
+  app.use(express.json());
 
-const app = express();
+  // Initialize DB
+  await initDB();
 
-app.use(cors());
-app.use(express.json());
+  // health check
+  app.get("/", (req, res) => {
+    res.json({ message: "Server is running fine!" });
+  });
 
-app.get("/", (req, res) => res.send("SmartCampus API Running 🚀"));
+  // test-db
+  app.get("/test-db", async (req, res) => {
+    await db.read();
+    db.data.users.push({ name: "test user" });
+    await db.write();
+    res.json({ message: "DB write success!", data: db.data });
+  });
 
-app.use("/api/auth", authRoutes);
-app.use("/api/tickets", ticketRoutes);
-app.use("/api/agents", agentRoutes);
+  app.listen(3000, () => {
+    console.log("Server started on http://localhost:3000");
+  });
+}
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+startServer();
