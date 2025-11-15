@@ -2,7 +2,24 @@
   "users": [
     {
       "name": "test user"
+    },
+    {
+      "id": "levB9K9HK-",
+      "email": "student@college.edu",
+      "name": "John Doe",
+      "role": "student",
+      "createdAt": 1763215510935
     }
   ],
-  "tickets": []
+  "tickets": [
+    {
+      "id": "NskptXQj1h",
+      "userId": "levB9K9HK-",
+      "category": "Hostel",
+      "description": "Water not coming",
+      "status": "open",
+      "assignedTo": "office-admin-123",
+      "createdAt": 1763215626173
+    }
+  ]
 }

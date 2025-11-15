@@ -2,6 +2,10 @@ import express from "express";
 import cors from "cors";
 import db, { initDB } from "./config/db.js";
 
+import userRoutes from "./routes/userRoutes.js";
+import ticketRoutes from "./routes/ticketRoutes.js";
+import agentRoutes from "./routes/agentRoutes.js";
+
 console.log("RUNNING CORRECT INDEX.JS");
 
 async function startServer() {
@@ -24,6 +28,11 @@ async function startServer() {
     await db.write();
     res.json({ message: "DB write success!", data: db.data });
   });
+
+  // mount routes
+  app.use("/api/users", userRoutes);
+  app.use("/api/tickets", ticketRoutes);
+  app.use("/api/agent", agentRoutes);
 
   app.listen(3000, () => {
     console.log("Server started on http://localhost:3000");
