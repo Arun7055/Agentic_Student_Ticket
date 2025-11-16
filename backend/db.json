@@ -1,25 +1,64 @@
 {
-  "users": [
-    {
-      "name": "test user"
-    },
-    {
-      "id": "levB9K9HK-",
-      "email": "student@college.edu",
-      "name": "John Doe",
-      "role": "student",
-      "createdAt": 1763215510935
-    }
-  ],
+  "users": [],
   "tickets": [
     {
-      "id": "NskptXQj1h",
-      "userId": "levB9K9HK-",
-      "category": "Hostel",
-      "description": "Water not coming",
+      "id": "JpHLKw5BMiw6BBjlHxOoY",
+      "studentId": "_E_MaVokfU7kqDCaYjCVn",
+      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
       "status": "open",
-      "assignedTo": "office-admin-123",
-      "createdAt": 1763215626173
+      "createdAt": 1763311515877,
+      "agent": {
+        "department": "unknown",
+        "urgency": "low",
+        "summary": "Could not analyze ticket",
+        "action": "Manual review required"
+      }
+    },
+    {
+      "id": "RKMlBVdmCYX9BxbhhId84",
+      "studentId": "_E_MaVokfU7kqDCaYjCVn",
+      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
+      "status": "open",
+      "createdAt": 1763311574342,
+      "agent": {
+        "department": "unknown",
+        "urgency": "low",
+        "summary": "Could not analyze ticket",
+        "action": "Manual review required"
+      }
+    },
+    {
+      "id": "UpKyZ1-kpdWoczwQgOKmC",
+      "studentId": "_E_MaVokfU7kqDCaYjCVn",
+      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
+      "status": "open",
+      "createdAt": 1763311624075,
+      "agent": {
+        "department": "unknown",
+        "urgency": "low",
+        "summary": "Could not analyze ticket",
+        "action": "Manual review required"
+      }
+    },
+    {
+      "id": "axMUggnRkHcDhrLSpX-UX",
+      "studentId": "_E_MaVokfU7kqDCaYjCVn",
+      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
+      "status": "open",
+      "createdAt": 1763311706544,
+      "agent": {
+        "department": "unknown",
+        "urgency": "low",
+        "summary": "Could not analyze ticket",
+        "action": "Manual review required"
+      }
+    }
+  ],
+  "students": [
+    {
+      "id": "_E_MaVokfU7kqDCaYjCVn",
+      "name": "Rahul Kumar",
+      "email": "rahul.kumar@college.edu"
     }
   ]
 }

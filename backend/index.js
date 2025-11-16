@@ -6,6 +6,10 @@ import userRoutes from "./routes/userRoutes.js";
 import ticketRoutes from "./routes/ticketRoutes.js";
 import agentRoutes from "./routes/agentRoutes.js";
 
+import dotenv from "dotenv";
+dotenv.config();
+
+
 console.log("RUNNING CORRECT INDEX.JS");
 
 async function startServer() {

@@ -8,7 +8,7 @@ const db = new Low(adapter, defaultData);
 
 export async function initDB() {
   await db.read();
-  db.data ||= defaultData;
+  db.data ||= { students: [], tickets: [] };
   await db.write();
 }
 
