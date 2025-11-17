@@ -7,17 +7,23 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Create a model instance
 const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-flash"
+  model: "gemini-2.5-flash"
 });
 
 console.log("Loaded Gemini Key:", process.env.GEMINI_API_KEY?.length);
+
+function cleanAIJSON(text) {
+  return text
+    .replace(/```json/g, "")
+    .replace(/```/g, "")
+    .trim();
+}
 
 
 export async function analyzeTicket(description, student, ticketId) {
   try {
     const prompt = `
-A help desk ticket was created in the college system.
-Here are the details:
+A help desk ticket was created in the college support system.
 
 Ticket ID: ${ticketId}
 Student Name: ${student.name}
@@ -27,12 +33,12 @@ Ticket Description:
 "${description}"
 
 Your task:
-1. Find what department or faculty should handle this issue.
-2. Summarize the problem politely.
-3. Identify urgency level (low / medium / high).
-4. Suggest next action for staff.
+1. Identify which department should handle this.
+2. Summarize the issue.
+3. Give urgency (low / medium / high).
+4. Suggest what the staff should do next.
 
-Give output in this JSON structure exactly:
+Respond **ONLY** with JSON in this exact format:
 
 {
   "department": "",
@@ -44,18 +50,32 @@ Give output in this JSON structure exactly:
 
     const result = await model.generateContent(prompt);
 
-    // Gemini returns text form, convert JSON safely
-    const rawText = result.response.text();
-    const parsed = JSON.parse(rawText);
+    let rawText = result.response.text();
+    let cleaned = cleanAIJSON(rawText);
 
-    return parsed;
+    // Try parsing
+    let json;
+
+    try {
+      json = JSON.parse(cleaned);
+    } catch (e) {
+      console.error("JSON parse fail → returning fallback:\n", cleaned);
+      json = {
+        department: "unknown",
+        urgency: "low",
+        summary: "AI response was not valid JSON",
+        action: "Manual review required"
+      };
+    }
+
+    return json;
 
   } catch (err) {
     console.error("Gemini Error:", err);
     return {
       department: "unknown",
       urgency: "low",
-      summary: "Could not analyze ticket",
+      summary: "AI processing failure",
       action: "Manual review required"
     };
   }

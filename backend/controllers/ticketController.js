@@ -10,6 +10,7 @@ export async function createTicket(req, res) {
   await db.read();
 
   // SAFETY: Ensure structure exists
+  db.data ||= {};
   db.data.students ||= [];
   db.data.tickets ||= [];
 

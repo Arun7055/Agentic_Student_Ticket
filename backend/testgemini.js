@@ -12,7 +12,7 @@ console.log("Loaded Gemini Key:", process.env.GEMINI_API_KEY?.length);
 
 async function test() {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent("Hello!");
     console.log("\nSUCCESS! Your API key works.");

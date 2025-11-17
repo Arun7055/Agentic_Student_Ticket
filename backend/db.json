@@ -2,61 +2,22 @@
   "users": [],
   "tickets": [
     {
-      "id": "JpHLKw5BMiw6BBjlHxOoY",
-      "studentId": "_E_MaVokfU7kqDCaYjCVn",
+      "id": "PXUbgivT8sEPzHURFPsOQ",
+      "studentId": "KlWmEcwwPir1AKSdiLhSf",
       "description": "I paid for the lab manual but the receipt is not generated. Please help.",
       "status": "open",
-      "createdAt": 1763311515877,
+      "createdAt": 1763350499191,
       "agent": {
-        "department": "unknown",
-        "urgency": "low",
-        "summary": "Could not analyze ticket",
-        "action": "Manual review required"
-      }
-    },
-    {
-      "id": "RKMlBVdmCYX9BxbhhId84",
-      "studentId": "_E_MaVokfU7kqDCaYjCVn",
-      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
-      "status": "open",
-      "createdAt": 1763311574342,
-      "agent": {
-        "department": "unknown",
-        "urgency": "low",
-        "summary": "Could not analyze ticket",
-        "action": "Manual review required"
-      }
-    },
-    {
-      "id": "UpKyZ1-kpdWoczwQgOKmC",
-      "studentId": "_E_MaVokfU7kqDCaYjCVn",
-      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
-      "status": "open",
-      "createdAt": 1763311624075,
-      "agent": {
-        "department": "unknown",
-        "urgency": "low",
-        "summary": "Could not analyze ticket",
-        "action": "Manual review required"
-      }
-    },
-    {
-      "id": "axMUggnRkHcDhrLSpX-UX",
-      "studentId": "_E_MaVokfU7kqDCaYjCVn",
-      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
-      "status": "open",
-      "createdAt": 1763311706544,
-      "agent": {
-        "department": "unknown",
-        "urgency": "low",
-        "summary": "Could not analyze ticket",
-        "action": "Manual review required"
+        "department": "Bursar/Finance Office",
+        "urgency": "Medium",
+        "summary": "Student Rahul Kumar paid for a lab manual but did not receive a receipt for the transaction.",
+        "action": "Contact Rahul Kumar to gather payment details (date, method, amount, payment ID if available). Investigate the payment transaction in the financial system. If the payment is confirmed, generate and send the receipt to the student. If the payment cannot be found or there was an error, provide clear instructions to the student on how to resolve the issue."
       }
     }
   ],
   "students": [
     {
-      "id": "_E_MaVokfU7kqDCaYjCVn",
+      "id": "KlWmEcwwPir1AKSdiLhSf",
       "name": "Rahul Kumar",
       "email": "rahul.kumar@college.edu"
     }
