@@ -13,6 +13,19 @@
         "summary": "Student Rahul Kumar paid for a lab manual but did not receive a receipt for the transaction.",
         "action": "Contact Rahul Kumar to gather payment details (date, method, amount, payment ID if available). Investigate the payment transaction in the financial system. If the payment is confirmed, generate and send the receipt to the student. If the payment cannot be found or there was an error, provide clear instructions to the student on how to resolve the issue."
       }
+    },
+    {
+      "id": "B-uLg-j_uUyy_m_vo-Qf9",
+      "studentId": "SD4PY_hI_tRYDEXgu-bKZ",
+      "description": "I parked my scooter in parking, but it is damaged. Whom to contact",
+      "status": "open",
+      "createdAt": 1763350713292,
+      "agent": {
+        "department": "Campus Security / Parking Services",
+        "urgency": "medium",
+        "summary": "Student Ajay Reddy's scooter was damaged while parked on campus and is seeking information on who to contact regarding the incident.",
+        "action": "Advise the student to contact Campus Security or Parking Services immediately to file an incident report. Provide the direct contact number or email for Campus Security and guide them on the incident reporting process. Also, inform them to take photos of the damage if they haven't already."
+      }
     }
   ],
   "students": [
@@ -20,6 +33,11 @@
       "id": "KlWmEcwwPir1AKSdiLhSf",
       "name": "Rahul Kumar",
       "email": "rahul.kumar@college.edu"
+    },
+    {
+      "id": "SD4PY_hI_tRYDEXgu-bKZ",
+      "name": "Ajay Reddy",
+      "email": "ajay.reddy@college.edu"
     }
   ]
 }
