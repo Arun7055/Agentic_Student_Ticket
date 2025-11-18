@@ -35,6 +35,7 @@ export async function createTicket(req, res) {
     description,
     status: "open",
     createdAt: Date.now(),
+    department: agentResult.department,
     agent: agentResult
   };
 
@@ -52,3 +53,23 @@ export const listTickets = async (req, res) => {
   await db.read();
   res.json(db.data.tickets);
 };
+
+export const listDeptTickets = async (req, res) => {
+  const { deptId } = req.params;
+
+  await db.read();
+  db.data.tickets ||= [];
+
+  // Only include tickets where department exists AND matches exactly
+  const deptTickets = db.data.tickets.filter(ticket =>
+    ticket.agent &&
+    ticket.agent.department &&
+    ticket.agent.department === department
+  );
+
+  res.json(deptTickets);
+};
+
+
+
+

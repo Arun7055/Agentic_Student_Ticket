@@ -38,6 +38,15 @@ Your task:
 3. Give urgency (low / medium / high).
 4. Suggest what the staff should do next.
 
+give any one of the following departments based on the issue:
+- Admin Office
+- Fee Office
+- Academic Affairs
+- Library
+- Exam Cell
+- Hostel Office
+- Placement Cell
+
 Respond **ONLY** with JSON in this exact format:
 
 {

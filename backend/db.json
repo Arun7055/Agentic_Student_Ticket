@@ -26,6 +26,61 @@
         "summary": "Student Ajay Reddy's scooter was damaged while parked on campus and is seeking information on who to contact regarding the incident.",
         "action": "Advise the student to contact Campus Security or Parking Services immediately to file an incident report. Provide the direct contact number or email for Campus Security and guide them on the incident reporting process. Also, inform them to take photos of the damage if they haven't already."
       }
+    },
+    {
+      "id": "nh9iRhtJiQhouwjmcopNa",
+      "studentId": "gISpYzpxZ8PeFG4YaoepL",
+      "status": "open",
+      "createdAt": 1763431588871,
+      "department": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "medium",
+        "summary": "The ticket is completely undefined, lacking student name, email, and a description, making it impossible to identify the issue or the student.",
+        "action": "Investigate the ticketing system for potential submission errors. If possible, attempt to identify the student from system logs or prompt for resubmission with complete details."
+      }
+    },
+    {
+      "id": "4_PJ8TYyubgtn_bQPwbsn",
+      "studentId": "gISpYzpxZ8PeFG4YaoepL",
+      "description": "I lost my college ID card near the library.",
+      "status": "open",
+      "createdAt": 1763431726687,
+      "department": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "Medium",
+        "summary": "Student lost their college ID card near the library.",
+        "action": "Contact the student to confirm the loss and provide instructions on the process for replacing a lost ID card, including any associated fees and required documentation. Advise checking the library's lost and found as a first step."
+      }
+    },
+    {
+      "id": "TFXczCcCMXJYl4O_etAHH",
+      "studentId": "gISpYzpxZ8PeFG4YaoepL",
+      "description": "Fan is broken in my hostel room. It needs to be fixed",
+      "status": "open",
+      "createdAt": 1763431852130,
+      "department": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "medium",
+        "summary": "The student reported that the fan in their hostel room is broken and requires repair.",
+        "action": "Contact the student to get the specific hostel room number. Dispatch maintenance staff to inspect and fix or replace the broken fan."
+      }
+    },
+    {
+      "id": "MPuvATK7VUEZSJMhgm3l-",
+      "studentId": "gISpYzpxZ8PeFG4YaoepL",
+      "description": "My exam timetable has wrong subject allocated",
+      "status": "open",
+      "createdAt": 1763432669498,
+      "department": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "high",
+        "summary": "The student's exam timetable lists an incorrect subject, potentially causing confusion or incorrect preparation for exams.",
+        "action": "Contact the student immediately to obtain their student ID and specific details of the incorrect subject and the expected correct subject. Cross-reference this information with the official course registration and master exam schedule to identify and correct the discrepancy in their timetable."
+      }
     }
   ],
   "students": [
@@ -38,6 +93,39 @@
       "id": "SD4PY_hI_tRYDEXgu-bKZ",
       "name": "Ajay Reddy",
       "email": "ajay.reddy@college.edu"
+    },
+    {
+      "id": "gISpYzpxZ8PeFG4YaoepL"
+    }
+  ],
+  "departments": [
+    {
+      "id": "dept-admin",
+      "name": "Admin Office"
+    },
+    {
+      "id": "fees-incharge",
+      "name": "Fee Office"
+    },
+    {
+      "id": "dean-academic",
+      "name": "Academic Affairs"
+    },
+    {
+      "id": "librarian",
+      "name": "Library"
+    },
+    {
+      "id": "Controller-of-Exam",
+      "name": "Exam Cell"
+    },
+    {
+      "id": "Warden",
+      "name": "Hostel Office"
+    },
+    {
+      "id": "Placement-officer",
+      "name": "Placement Cell"
     }
   ]
 }
