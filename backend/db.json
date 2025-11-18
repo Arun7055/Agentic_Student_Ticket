@@ -81,6 +81,20 @@
         "summary": "The student's exam timetable lists an incorrect subject, potentially causing confusion or incorrect preparation for exams.",
         "action": "Contact the student immediately to obtain their student ID and specific details of the incorrect subject and the expected correct subject. Cross-reference this information with the official course registration and master exam schedule to identify and correct the discrepancy in their timetable."
       }
+    },
+    {
+      "id": "dvQ09Qm1VMr03YIQUaOlM",
+      "studentId": "gISpYzpxZ8PeFG4YaoepL",
+      "description": "Hostel toilets filled with poop",
+      "status": "open",
+      "createdAt": 1763438000151,
+      "department": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "high",
+        "summary": "Hostel toilets are overflowing with waste, creating unsanitary and unhygienic conditions.",
+        "action": "Immediately dispatch maintenance and cleaning staff to the hostel to address the overflowing toilets, clean the affected areas, and investigate the cause of the blockage to prevent recurrence. Communicate with hostel residents regarding the issue and its resolution."
+      }
     }
   ],
   "students": [
