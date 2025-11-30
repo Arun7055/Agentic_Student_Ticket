@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/create", createTicket);
 router.get("/list", listTickets);
-router.get("/department/:dept", listDeptTickets);
-
+router.get("/department/:deptId", listDeptTickets);
+router.get("/student/:email", listTickets);
 
 export default router;

@@ -1,129 +1,50 @@
 {
-  "users": [],
   "tickets": [
     {
-      "id": "PXUbgivT8sEPzHURFPsOQ",
-      "studentId": "KlWmEcwwPir1AKSdiLhSf",
-      "description": "I paid for the lab manual but the receipt is not generated. Please help.",
+      "id": "RyelkF7x1zvKqrOVZu7-D",
+      "studentId": "Csy0jZhs0EvotCdafg8Hg",
+      "studentName": "arun",
+      "studentEmail": "arun@example.com",
+      "description": "I had returned a book a month age, but status still shows borrowed",
       "status": "open",
-      "createdAt": 1763350499191,
+      "createdAt": 1764509787669,
+      "departmentId": "librarian",
+      "departmentName": "Library",
       "agent": {
-        "department": "Bursar/Finance Office",
-        "urgency": "Medium",
-        "summary": "Student Rahul Kumar paid for a lab manual but did not receive a receipt for the transaction.",
-        "action": "Contact Rahul Kumar to gather payment details (date, method, amount, payment ID if available). Investigate the payment transaction in the financial system. If the payment is confirmed, generate and send the receipt to the student. If the payment cannot be found or there was an error, provide clear instructions to the student on how to resolve the issue."
-      }
-    },
-    {
-      "id": "B-uLg-j_uUyy_m_vo-Qf9",
-      "studentId": "SD4PY_hI_tRYDEXgu-bKZ",
-      "description": "I parked my scooter in parking, but it is damaged. Whom to contact",
-      "status": "open",
-      "createdAt": 1763350713292,
-      "agent": {
-        "department": "Campus Security / Parking Services",
+        "department": "Library",
         "urgency": "medium",
-        "summary": "Student Ajay Reddy's scooter was damaged while parked on campus and is seeking information on who to contact regarding the incident.",
-        "action": "Advise the student to contact Campus Security or Parking Services immediately to file an incident report. Provide the direct contact number or email for Campus Security and guide them on the incident reporting process. Also, inform them to take photos of the damage if they haven't already."
+        "summary": "Student 'arun' reports that a book returned a month ago is still showing as borrowed in the system.",
+        "action": "The Library staff should investigate the book's return records, verify the physical return, and update the book's status in the library management system. Contact the student if more details (e.g., book title, exact return date, receipt) are needed for verification."
       }
     },
     {
-      "id": "nh9iRhtJiQhouwjmcopNa",
-      "studentId": "gISpYzpxZ8PeFG4YaoepL",
-      "status": "open",
-      "createdAt": 1763431588871,
-      "department": "Admin Office",
-      "agent": {
-        "department": "Admin Office",
-        "urgency": "medium",
-        "summary": "The ticket is completely undefined, lacking student name, email, and a description, making it impossible to identify the issue or the student.",
-        "action": "Investigate the ticketing system for potential submission errors. If possible, attempt to identify the student from system logs or prompt for resubmission with complete details."
-      }
-    },
-    {
-      "id": "4_PJ8TYyubgtn_bQPwbsn",
-      "studentId": "gISpYzpxZ8PeFG4YaoepL",
-      "description": "I lost my college ID card near the library.",
-      "status": "open",
-      "createdAt": 1763431726687,
-      "department": "Admin Office",
-      "agent": {
-        "department": "Admin Office",
-        "urgency": "Medium",
-        "summary": "Student lost their college ID card near the library.",
-        "action": "Contact the student to confirm the loss and provide instructions on the process for replacing a lost ID card, including any associated fees and required documentation. Advise checking the library's lost and found as a first step."
-      }
-    },
-    {
-      "id": "TFXczCcCMXJYl4O_etAHH",
-      "studentId": "gISpYzpxZ8PeFG4YaoepL",
-      "description": "Fan is broken in my hostel room. It needs to be fixed",
-      "status": "open",
-      "createdAt": 1763431852130,
-      "department": "Hostel Office",
-      "agent": {
-        "department": "Hostel Office",
-        "urgency": "medium",
-        "summary": "The student reported that the fan in their hostel room is broken and requires repair.",
-        "action": "Contact the student to get the specific hostel room number. Dispatch maintenance staff to inspect and fix or replace the broken fan."
-      }
-    },
-    {
-      "id": "MPuvATK7VUEZSJMhgm3l-",
-      "studentId": "gISpYzpxZ8PeFG4YaoepL",
-      "description": "My exam timetable has wrong subject allocated",
-      "status": "open",
-      "createdAt": 1763432669498,
-      "department": "Exam Cell",
-      "agent": {
-        "department": "Exam Cell",
-        "urgency": "high",
-        "summary": "The student's exam timetable lists an incorrect subject, potentially causing confusion or incorrect preparation for exams.",
-        "action": "Contact the student immediately to obtain their student ID and specific details of the incorrect subject and the expected correct subject. Cross-reference this information with the official course registration and master exam schedule to identify and correct the discrepancy in their timetable."
-      }
-    },
-    {
-      "id": "dvQ09Qm1VMr03YIQUaOlM",
-      "studentId": "gISpYzpxZ8PeFG4YaoepL",
+      "id": "edqGJT2deZQVNi4_bmhtv",
+      "studentId": "8zV4wY6GnSxIRzYtYhXou",
+      "studentName": "ajay reddy",
+      "studentEmail": "ajay@example.com",
       "description": "Hostel toilets filled with poop",
       "status": "open",
-      "createdAt": 1763438000151,
-      "department": "Hostel Office",
+      "createdAt": 1764509855248,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
       "agent": {
         "department": "Hostel Office",
         "urgency": "high",
-        "summary": "Hostel toilets are overflowing with waste, creating unsanitary and unhygienic conditions.",
-        "action": "Immediately dispatch maintenance and cleaning staff to the hostel to address the overflowing toilets, clean the affected areas, and investigate the cause of the blockage to prevent recurrence. Communicate with hostel residents regarding the issue and its resolution."
-      }
-    },
-    {
-      "id": "m3RkgvAxcbBii6i-6o9Ed",
-      "studentId": "gISpYzpxZ8PeFG4YaoepL",
-      "description": "I have been selected in company, but not received offer letter",
-      "status": "open",
-      "createdAt": 1763609949374,
-      "department": "Placement Cell",
-      "agent": {
-        "department": "Placement Cell",
-        "urgency": "high",
-        "summary": "The student has been selected by a company but has not yet received their official offer letter.",
-        "action": "Contact the student immediately to gather more details (company name, date of selection, student ID) and then follow up with the respective company's HR/recruitment team regarding the missing offer letter. Keep the student informed of the progress."
+        "summary": "The hostel toilets are experiencing a severe sanitary issue, being completely filled with human waste, requiring immediate attention.",
+        "action": "Immediately dispatch maintenance and cleaning staff to the hostel to address the blocked and unsanitary toilets. Prioritize cleaning and repair to restore functionality and hygiene."
       }
     }
   ],
   "students": [
     {
-      "id": "KlWmEcwwPir1AKSdiLhSf",
-      "name": "Rahul Kumar",
-      "email": "rahul.kumar@college.edu"
+      "id": "Csy0jZhs0EvotCdafg8Hg",
+      "name": "arun",
+      "email": "arun@example.com"
     },
     {
-      "id": "SD4PY_hI_tRYDEXgu-bKZ",
-      "name": "Ajay Reddy",
-      "email": "ajay.reddy@college.edu"
-    },
-    {
-      "id": "gISpYzpxZ8PeFG4YaoepL"
+      "id": "8zV4wY6GnSxIRzYtYhXou",
+      "name": "ajay reddy",
+      "email": "ajay@example.com"
     }
   ],
   "departments": [
