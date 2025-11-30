@@ -95,6 +95,20 @@
         "summary": "Hostel toilets are overflowing with waste, creating unsanitary and unhygienic conditions.",
         "action": "Immediately dispatch maintenance and cleaning staff to the hostel to address the overflowing toilets, clean the affected areas, and investigate the cause of the blockage to prevent recurrence. Communicate with hostel residents regarding the issue and its resolution."
       }
+    },
+    {
+      "id": "m3RkgvAxcbBii6i-6o9Ed",
+      "studentId": "gISpYzpxZ8PeFG4YaoepL",
+      "description": "I have been selected in company, but not received offer letter",
+      "status": "open",
+      "createdAt": 1763609949374,
+      "department": "Placement Cell",
+      "agent": {
+        "department": "Placement Cell",
+        "urgency": "high",
+        "summary": "The student has been selected by a company but has not yet received their official offer letter.",
+        "action": "Contact the student immediately to gather more details (company name, date of selection, student ID) and then follow up with the respective company's HR/recruitment team regarding the missing offer letter. Keep the student informed of the progress."
+      }
     }
   ],
   "students": [
