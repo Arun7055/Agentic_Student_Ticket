@@ -1,37 +1,20 @@
 {
   "tickets": [
     {
-      "id": "RyelkF7x1zvKqrOVZu7-D",
+      "id": "fc4B7CjfjLDiy3zLfx_9r",
       "studentId": "Csy0jZhs0EvotCdafg8Hg",
       "studentName": "arun",
       "studentEmail": "arun@example.com",
-      "description": "I had returned a book a month age, but status still shows borrowed",
+      "description": "i want to talk to admin ",
       "status": "open",
-      "createdAt": 1764509787669,
-      "departmentId": "librarian",
-      "departmentName": "Library",
+      "createdAt": 1765088314225,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
       "agent": {
-        "department": "Library",
-        "urgency": "medium",
-        "summary": "Student 'arun' reports that a book returned a month ago is still showing as borrowed in the system.",
-        "action": "The Library staff should investigate the book's return records, verify the physical return, and update the book's status in the library management system. Contact the student if more details (e.g., book title, exact return date, receipt) are needed for verification."
-      }
-    },
-    {
-      "id": "edqGJT2deZQVNi4_bmhtv",
-      "studentId": "8zV4wY6GnSxIRzYtYhXou",
-      "studentName": "ajay reddy",
-      "studentEmail": "ajay@example.com",
-      "description": "Hostel toilets filled with poop",
-      "status": "open",
-      "createdAt": 1764509855248,
-      "departmentId": "Warden",
-      "departmentName": "Hostel Office",
-      "agent": {
-        "department": "Hostel Office",
-        "urgency": "high",
-        "summary": "The hostel toilets are experiencing a severe sanitary issue, being completely filled with human waste, requiring immediate attention.",
-        "action": "Immediately dispatch maintenance and cleaning staff to the hostel to address the blocked and unsanitary toilets. Prioritize cleaning and repair to restore functionality and hygiene."
+        "department": "Admin Office",
+        "urgency": "low",
+        "summary": "The student wishes to speak with an administrator.",
+        "action": "Contact the student to understand the reason for their request to speak with an administrator and facilitate appropriate communication."
       }
     }
   ],
