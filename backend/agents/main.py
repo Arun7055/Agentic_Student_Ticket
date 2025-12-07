@@ -5,10 +5,10 @@ from hostel import hostel_agent
 from library import library_agent
 from admin import admin_agent
 from fees import fees_agent
-#from academic import academic_agent
-#from exam import exam_agent
+from academic import academic_agent
+from exam import exam_agent
+from placement import placement_agent
 
-#from placement import placement_agent
 
 
 app = Flask(__name__)

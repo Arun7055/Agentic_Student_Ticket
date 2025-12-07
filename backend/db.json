@@ -1,20 +1,37 @@
 {
   "tickets": [
     {
-      "id": "fc4B7CjfjLDiy3zLfx_9r",
+      "id": "zH3WIgbrKDJodB4TbkeEO",
       "studentId": "Csy0jZhs0EvotCdafg8Hg",
       "studentName": "arun",
       "studentEmail": "arun@example.com",
-      "description": "i want to talk to admin ",
+      "description": "i am not getting placed ",
       "status": "open",
-      "createdAt": 1765088314225,
-      "departmentId": "dept-admin",
-      "departmentName": "Admin Office",
+      "createdAt": 1765109925185,
+      "departmentId": "Placement-officer",
+      "departmentName": "Placement Cell",
       "agent": {
-        "department": "Admin Office",
-        "urgency": "low",
-        "summary": "The student wishes to speak with an administrator.",
-        "action": "Contact the student to understand the reason for their request to speak with an administrator and facilitate appropriate communication."
+        "department": "Placement Cell",
+        "urgency": "medium",
+        "summary": "Student is reporting difficulty with job placement.",
+        "action": "Placement Cell staff should contact the student to understand their specific challenges with job placement and offer guidance or support."
+      }
+    },
+    {
+      "id": "f-juQcsxK3fzwSfLhcZbI",
+      "studentId": "Csy0jZhs0EvotCdafg8Hg",
+      "studentName": "arun",
+      "studentEmail": "arun@example.com",
+      "description": "i am not getting placed ",
+      "status": "open",
+      "createdAt": 1765109949805,
+      "departmentId": "Placement-officer",
+      "departmentName": "Placement Cell",
+      "agent": {
+        "department": "Placement Cell",
+        "urgency": "medium",
+        "summary": "Student Arun is reporting difficulty in securing a placement opportunity.",
+        "action": "The Placement Cell should contact Arun to understand the specific issues, review their profile and eligibility, provide career counseling, and connect them with relevant placement opportunities or support."
       }
     }
   ],
