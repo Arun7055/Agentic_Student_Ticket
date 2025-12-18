@@ -1,37 +1,20 @@
 {
   "tickets": [
     {
-      "id": "zH3WIgbrKDJodB4TbkeEO",
-      "studentId": "Csy0jZhs0EvotCdafg8Hg",
-      "studentName": "arun",
-      "studentEmail": "arun@example.com",
-      "description": "i am not getting placed ",
+      "id": "OdjOJUU1zfQ6MwCIiufRh",
+      "studentId": "8zV4wY6GnSxIRzYtYhXou",
+      "studentName": "ajay reddy",
+      "studentEmail": "ajay@example.com",
+      "description": "I have been shortlisted by company but not received offer letter",
       "status": "open",
-      "createdAt": 1765109925185,
+      "createdAt": 1765521728011,
       "departmentId": "Placement-officer",
       "departmentName": "Placement Cell",
       "agent": {
         "department": "Placement Cell",
         "urgency": "medium",
-        "summary": "Student is reporting difficulty with job placement.",
-        "action": "Placement Cell staff should contact the student to understand their specific challenges with job placement and offer guidance or support."
-      }
-    },
-    {
-      "id": "f-juQcsxK3fzwSfLhcZbI",
-      "studentId": "Csy0jZhs0EvotCdafg8Hg",
-      "studentName": "arun",
-      "studentEmail": "arun@example.com",
-      "description": "i am not getting placed ",
-      "status": "open",
-      "createdAt": 1765109949805,
-      "departmentId": "Placement-officer",
-      "departmentName": "Placement Cell",
-      "agent": {
-        "department": "Placement Cell",
-        "urgency": "medium",
-        "summary": "Student Arun is reporting difficulty in securing a placement opportunity.",
-        "action": "The Placement Cell should contact Arun to understand the specific issues, review their profile and eligibility, provide career counseling, and connect them with relevant placement opportunities or support."
+        "summary": "Student ajay reddy has been shortlisted by a company but has not yet received an offer letter.",
+        "action": "Contact the company to inquire about the status of the offer letter and provide an update to the student."
       }
     }
   ],
