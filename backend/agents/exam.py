@@ -5,49 +5,60 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
 from utils import get_api_key
 from flask import Flask, request, jsonify
 
 from crewai import Agent, Crew, Task, LLM
-from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
+import smtplib
 from typing import Type
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from crewai.tools import BaseTool
 
-# ============================================
-#  1) GEMINI CONFIG
-# ============================================
 
-gemini_api_key = get_api_key()
-os.environ["GEMINI_API_KEY"] = gemini_api_key
+
 
 llm = LLM(
-    model="gemini-2.5-flash",
-    api_key=gemini_api_key,
-    provider="gemini"
+    model="llama-3.3-70b-versatile",   # ✅ ACTIVE Groq model
+    api_key=os.getenv("GROQ_API_KEY"),
+    provider="openai",
+    base_url="https://api.groq.com/openai/v1",
+    temperature=0.7
 )
 
 # ============================================
-# 2) EMAIL TOOL
+# 2) EMAIL SENDER FUNCTION
 # ============================================
-
 class EmailInput(BaseModel):
-    subject: str = Field(..., description="Email subject")
-    body: str = Field(..., description="Email body")
+    subject: str = Field(..., description="Email subject including urgency")
+    body: str = Field(..., description="Full email body")
 
-class SendExamEmailTool(BaseTool):
-    name: str = "send_exam_email"
-    description: str = "Dummy email sender tool for Exam Cell"
-    args_schema: Type[BaseModel] = EmailInput
-
-    def _run(self, subject: str, body: str):
-        print("\n====== EXAM CELL EMAIL (DUMMY) ======")
-        print("Subject:", subject)
-        print("Body:", body)
-        print("=====================================\n")
-        return "Exam cell email sent successfully."
-
-send_exam_email = SendExamEmailTool()
+class RealHostelEmailTool(BaseTool): 
+    name: str = "real_hostel_email" 
+    description: str = "Send real exam complaint email using SMTP" 
+    args_schema: Type[BaseModel] = EmailInput 
+    def _run(self, subject: str, body: str): 
+        sender_email = os.getenv("MAIL_USER") 
+        sender_pass = os.getenv("MAIL_PASS") 
+        receiver_email = "sathwikpai.is23@rvce.edu.in" 
+        msg = MIMEMultipart() 
+        msg["From"] = sender_email 
+        msg["To"] = receiver_email 
+        msg["Subject"] = subject 
+        msg.attach(MIMEText(body, "plain")) 
+        try: 
+            server = smtplib.SMTP("smtp.gmail.com", 587) 
+            server.starttls() 
+            server.login(sender_email, sender_pass) 
+            server.sendmail(sender_email, receiver_email, msg.as_string()) 
+            server.quit() 
+            print("✅ EMAIL SENT SUCCESSFULLY") 
+            return "Email sent successfully" 
+        except Exception as e: 
+            print("❌ EMAIL FAILED:", str(e)) 
+            return "Email failed" 
+real_hostel_email=RealHostelEmailTool()
 
 # ============================================
 # 3) EXAM AGENTS
@@ -56,26 +67,29 @@ send_exam_email = SendExamEmailTool()
 exam_followup_agent = Agent(
     role="Exam Query Conversational Bot",
     goal="""
-    Collect exam-related queries from students.
+    Collect hostel complaint details.
     Ask ONE question at a time.
 
-    Required information:
-    – Student name
-    – USN
-    – Year of study (1st/2nd/3rd/4th year)
-    – Department
-    – Query Type:
+     REQUIRED FIELDS (ask in this exact order):
+    1. Student name
+    2. USN
+    3. Department
+    4.Query Type:
          (Exam dates / Paper correction status / Hall ticket issues /
           Backlog exam / Revaluation / Timetable / Format doubts /
           Internal marks / Attendance shortage / General exam queries)
-    – Subject name (if relevant)
-    – Additional details (if needed)
-    – Urgency (High/Medium/Low)
+    5.Subject name (if relevant)
 
-    After collecting all details say:
-    "Thank you. I have collected all exam-related details. Preparing your request now."
+
+    IMPORTANT RULES:
+    - NEVER ask about urgency
+    - NEVER ask the question again and again
+    - NEVER guess missing answers
+    - AFTER collecting problem description, STOP asking questions
+    - End with EXACTLY this sentence:
+      "Thank you. I have all the information and will now file your complaint."
     """,
-    backstory="You are the assistant for the Exam Cell handling doubts about exam dates, corrections, results, revaluation, etc.",
+    backstory="Expert exam maintenance assistant.",
     memory=True,
     allow_delegation=False,
     llm=llm
@@ -84,40 +98,97 @@ exam_followup_agent = Agent(
 exam_structuring_agent = Agent(
     role="Exam Query Structuring Specialist",
     goal="""
-    Convert the conversation into the following JSON:
+    Convert the final conversation into JSON.
 
+    RULES:
+    - Extract REAL values from conversation
+    - DO NOT leave any field empty
+    - Infer urgency internally (do NOT ask user)
+
+    Urgency rules:
+    - High → fastrack exam,
+    - Medium → exam time table
+    - Low → previous year question papers
+    - Do not put random informations in between other then json
+
+    OUTPUT JSON ONLY:
     {
       "student_name": "",
-      "usn": "",
-      "year_of_study": "",
-      "department": "",
-      "query_type": "",
-      "subject": "",
-      "additional_details": "",
+      "USN": "",
+      "Department": "",
+      "Query_type": "",
       "urgency": "",
       "full_summary": ""
     }
     """,
-    backstory="Expert in formatting exam-related data into JSON.",
+    backstory="Expert JSON structuring Agent",
     memory=False,
     allow_delegation=False,
     llm=llm
 )
 
 exam_email_agent = Agent(
-    role="Formal Exam Cell Email Writer",
-    goal="Convert the structured JSON into a professional email for the Exam Department.",
-    backstory="Expert email formatter for exam-related communications.",
+    role="Email Formatting Agent",
+    goal="""
+    You are given a structured JSON with complaint details.
+
+    STRICT RULES:
+    - DO NOT use placeholders like [Student Name]
+    - ALWAYS substitute actual values from JSON
+    - Use actual names from the json format do not use random
+    - Keep the email SHORT (max 8–10 lines)
+    - Subject MUST include urgency in CAPS
+    - Highlight urgency clearly in the body
+    - don not use jhon doe as name
+    -<x> every where x to be replaced by real json value from questions
+    - mail should be properly formatted like one line after other line
+    SUBJECT FORMAT (MANDATORY):
+    [<URGENCY> URGENCY] exam Issue for student <student_name>, USN <USN>
+
+    BODY FORMAT (MANDATORY):
+
+    Dear Exam Management Team,
+
+    My name is <student_name>, student <student_name>, USN <USN>
+
+    Issue: <Query_type>
+    Urgency: <urgency>
+
+    Kindly arrange maintenance at the earliest.
+
+    Thank you,
+    <student_name>
+    """,
+    backstory="Email Formatting Agent",
     memory=False,
+    allow_delegation=False,
     llm=llm
 )
-
 exam_dispatcher_agent = Agent(
-    role="Exam Email Dispatcher",
-    goal="Send email using send_exam_email()",
-    backstory="Responsible for sending the final exam cell email.",
-    tools=[send_exam_email],
-    memory=False,
+    role="Hostel Dispatcher",
+    goal="""
+    You will ONLY send an email if ALL conditions are met:
+
+    CONDITIONS (MANDATORY):
+    - You receive BOTH:
+        - subject
+        - body
+    - Subject must contain one of:
+        [HIGH URGENCY], [MEDIUM URGENCY], [LOW URGENCY]
+    - Body must NOT contain placeholders like:
+        [name], [USN], <student_name>, etc.
+
+    IF CONDITIONS ARE NOT MET:
+    - DO NOTHING
+    - DO NOT call any tool
+    - Return: "Waiting for complete email content."
+
+    WHEN CONDITIONS ARE MET:
+    - Call real_hostel_email exactly once
+    """,
+    backstory="U r a dispactcher agent",
+    tools=[real_hostel_email],
+    allow_delegation=False,
     llm=llm
 )
 
@@ -128,7 +199,7 @@ exam_dispatcher_agent = Agent(
 def build_exam_crew():
     t1 = Task(
         description="Collect exam-related query details.",
-        expected_output="Complete exam query details collected from the student.",
+        expected_output="Final confirmation sentence only.",
         agent=exam_followup_agent,
         interactive=True,
         human_input=True
@@ -136,19 +207,19 @@ def build_exam_crew():
 
     t2 = Task(
         description="Convert collected data into structured JSON.",
-        expected_output="Validated JSON object representing exam-related query.",
+        expected_output="Valid JSON object only.",
         agent=exam_structuring_agent
     )
 
     t3 = Task(
-        description="Convert the structured JSON into a formal email.",
-        expected_output="Formatted email body for the exam department.",
+        description="Generate a formal email using the JSON.",
+        expected_output="Email subject and body.",
         agent=exam_email_agent
     )
 
     t4 = Task(
-        description="Send the exam email.",
-        expected_output="Email sent successfully.",
+        description="Send the email using the tool.",
+        expected_output="Email sent confirmation.",
         agent=exam_dispatcher_agent
     )
 

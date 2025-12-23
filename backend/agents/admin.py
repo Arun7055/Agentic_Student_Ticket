@@ -1,55 +1,60 @@
-# ============================================
-#       ADMIN QUERY BOT – GEMINI API
-# ============================================
-
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
 from utils import get_api_key
 from flask import Flask, request, jsonify
 
 from crewai import Agent, Crew, Task, LLM
-from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
+import smtplib
 from typing import Type
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from crewai.tools import BaseTool
 
 
-# ============================================
-#  1) GEMINI CONFIG
-# ============================================
 
-gemini_api_key = get_api_key()
-os.environ["GEMINI_API_KEY"] = gemini_api_key
 
 llm = LLM(
-    model="gemini-2.5-flash",
-    api_key=gemini_api_key,
-    provider="gemini"
+    model="llama-3.3-70b-versatile",   # ✅ ACTIVE Groq model
+    api_key=os.getenv("GROQ_API_KEY"),
+    provider="openai",
+    base_url="https://api.groq.com/openai/v1",
+    temperature=0.7
 )
 
-
 # ============================================
-# 2) EMAIL TOOL
+# 2) EMAIL SENDER FUNCTION
 # ============================================
-
 class EmailInput(BaseModel):
-    subject: str = Field(..., description="Email subject")
-    body: str = Field(..., description="Email content")
+    subject: str = Field(..., description="Email subject including urgency")
+    body: str = Field(..., description="Full email body")
 
-class SendAdminEmailTool(BaseTool):
-    name: str = "send_admin_email"
-    description: str = "Dummy email sender for admin department"
-    args_schema: Type[BaseModel] = EmailInput
-
-    def _run(self, subject: str, body: str):
-        print("\n====== ADMIN EMAIL SENT (DUMMY) ======")
-        print("Subject:", subject)
-        print("Body:", body)
-        print("======================================\n")
-        return "Email sent successfully."
-
-send_admin_email = SendAdminEmailTool()
+class RealHostelEmailTool(BaseTool): 
+    name: str = "real_hostel_email" 
+    description: str = "Send real hostel complaint email using SMTP" 
+    args_schema: Type[BaseModel] = EmailInput 
+    def _run(self, subject: str, body: str): 
+        sender_email = os.getenv("MAIL_USER") 
+        sender_pass = os.getenv("MAIL_PASS") 
+        receiver_email = "sathwikpai.is23@rvce.edu.in" 
+        msg = MIMEMultipart() 
+        msg["From"] = sender_email 
+        msg["To"] = receiver_email 
+        msg["Subject"] = subject 
+        msg.attach(MIMEText(body, "plain")) 
+        try: 
+            server = smtplib.SMTP("smtp.gmail.com", 587) 
+            server.starttls() 
+            server.login(sender_email, sender_pass) 
+            server.sendmail(sender_email, receiver_email, msg.as_string()) 
+            server.quit() 
+            print("✅ EMAIL SENT SUCCESSFULLY") 
+            return "Email sent successfully" 
+        except Exception as e: 
+            print("❌ EMAIL FAILED:", str(e)) 
+            return "Email failed" 
+real_hostel_email=RealHostelEmailTool()
 
 
 # ============================================
@@ -59,19 +64,24 @@ send_admin_email = SendAdminEmailTool()
 admin_followup_agent = Agent(
     role="Admin Issue Conversational Bot",
     goal="""
-    Collect general admin-related request details.
+    Collect hostel complaint details.
     Ask ONE question at a time.
 
-    Required fields:
-    – Student name
-    – USN
-    – Type of request 
-    – Detailed problem/request description
-    – Any needed date (if applicable)
-    – Urgency (High/Medium/Low)
+     REQUIRED FIELDS (ask in this exact order):
+    1. Student name
+    2.USN
+    3. Type of Request
+    4. Detailed problem/request description
+    5. Needed solution by
 
-    After collecting all details, say:
-    "Thank you. I have collected all information and will now process your request."
+
+    IMPORTANT RULES:
+    - NEVER ask about urgency
+    - NEVER ask the question again and again
+    - NEVER guess missing answers
+    - AFTER collecting problem description, STOP asking questions
+    - End with EXACTLY this sentence:
+      "Thank you. I have all the information and will now file your complaint."
     """,
     backstory="Expert in handling all general college admin requests.",
     memory=True,
@@ -82,17 +92,30 @@ admin_followup_agent = Agent(
 admin_structuring_agent = Agent(
     role="Admin Request Structuring Agent",
     goal="""
-    Convert the final conversation into JSON:
+    Convert the final conversation into JSON.
+
+    RULES:
+    - Extract REAL values from conversation
+    - DO NOT leave any field empty
+    - Infer urgency internally (do NOT ask user)
+
+    Urgency rules:
+    - High → Name not in exam list
+    - Medium → marks card errors
+    - Low → issue of marks card
+    - Do not put random informations in between other then json
+
+    OUTPUT JSON ONLY:
     {
       "student_name": "",
-      "usn": "",
-      "request_type": "",
-      "description": "",
-      "date_required": "",
+      "USN": "",
+      "Type_of_request": "",
+      "Detailed_problem": "",
       "urgency": "",
       "full_summary": ""
     }
-    """,
+    """
+   ,
     backstory="Organises all admin requests into structured format.",
     memory=False,
     allow_delegation=False,
@@ -100,19 +123,67 @@ admin_structuring_agent = Agent(
 )
 
 admin_email_agent = Agent(
-    role="Admin Email Formatting Agent",
-    goal="Convert structured JSON into a professional email format.",
-    backstory="Expert in drafting formal administrative emails.",
+   role="Email Formatting Agent",
+    goal="""
+    You are given a structured JSON with complaint details.
+
+    STRICT RULES:
+    - DO NOT use placeholders like [Student Name]
+    - ALWAYS substitute actual values from JSON
+    - Use actual names from the json format do not use random
+    - Keep the email SHORT (max 8–10 lines)
+    - Subject MUST include urgency in CAPS
+    - Highlight urgency clearly in the body
+    - don not use jhon doe as name
+    -<x> every where x to be replaced by real json value from questions
+    - mail should be properly formatted like one line after other line
+    SUBJECT FORMAT (MANDATORY):
+    [<URGENCY> URGENCY]Admin Issue 
+
+    BODY FORMAT (MANDATORY):
+
+    Dear Admin Team,
+
+    My name is <student_name>, with USN <usn>, any with the request related to <Type_of_request>.
+
+    Issue: <Detailed_problem>
+    Urgency: <urgency>
+
+    Kindly look into the matter at the earliest.
+
+    Thank you,
+    <student_name>
+    """,
+    backstory="Email Formatting Agent",
     memory=False,
+    allow_delegation=False,
     llm=llm
 )
-
 admin_dispatcher_agent = Agent(
-    role="Admin Request Dispatcher",
-    goal="Send email using send_admin_email().",
-    backstory="Handles forwarding final admin email.",
-    tools=[send_admin_email],
-    memory=False,
+    role="Hostel Dispatcher",
+    goal="""
+    You will ONLY send an email if ALL conditions are met:
+
+    CONDITIONS (MANDATORY):
+    - You receive BOTH:
+        - subject
+        - body
+    - Subject must contain one of:
+        [HIGH URGENCY], [MEDIUM URGENCY], [LOW URGENCY]
+    - Body must NOT contain placeholders like:
+        [name], [USN], etc.
+
+    IF CONDITIONS ARE NOT MET:
+    - DO NOTHING
+    - DO NOT call any tool
+    - Return: "Waiting for complete email content."
+
+    WHEN CONDITIONS ARE MET:
+    - Call real_hostel_email exactly once
+    """,
+    backstory="U r a dispactcher agent",
+    tools=[real_hostel_email],
+    allow_delegation=False,
     llm=llm
 )
 
@@ -124,7 +195,7 @@ admin_dispatcher_agent = Agent(
 def build_admin_crew():
     t1 = Task(
         description="Collect admin request details from student.",
-        expected_output="A structured conversation with all required fields.",
+        expected_output="Final confirmation sentence only.",
         agent=admin_followup_agent,
         interactive=True,
         human_input=True
@@ -132,19 +203,19 @@ def build_admin_crew():
 
     t2 = Task(
         description="Convert collected details into structured JSON.",
-        expected_output="A JSON object with properly formatted admin request.",
+        expected_output="Valid JSON object only.",
         agent=admin_structuring_agent
     )
 
     t3 = Task(
-        description="Convert structured JSON into email content.",
-        expected_output="A professionally formatted admin email.",
+        description="Generate a formal email using the JSON.",
+        expected_output="Email subject and body.",
         agent=admin_email_agent
     )
 
     t4 = Task(
-        description="Send email using the admin email tool.",
-        expected_output="A confirmation message: 'Email sent successfully'.",
+        description="Send the email using the tool.",
+        expected_output="Email sent confirmation.",
         agent=admin_dispatcher_agent
     )
 

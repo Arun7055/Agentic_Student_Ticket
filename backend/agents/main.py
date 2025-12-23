@@ -8,12 +8,21 @@ from fees import fees_agent
 from academic import academic_agent
 from exam import exam_agent
 from placement import placement_agent
-
+import logging
 
 
 app = Flask(__name__)
 
 
+
+# Silence CrewAI telemetry logs
+logging.getLogger("crewai.telemetry").setLevel(logging.CRITICAL)
+
+# Silence OpenTelemetry exporter logs
+logging.getLogger("opentelemetry").setLevel(logging.CRITICAL)
+
+# Silence urllib3 retry/timeout logs
+logging.getLogger("urllib3").setLevel(logging.CRITICAL)
 # -------------------------
 # Helper for Validation
 # -------------------------

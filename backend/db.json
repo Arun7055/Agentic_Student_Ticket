@@ -1,50 +1,242 @@
 {
   "tickets": [
     {
-      "id": "zH3WIgbrKDJodB4TbkeEO",
-      "studentId": "Csy0jZhs0EvotCdafg8Hg",
-      "studentName": "arun",
-      "studentEmail": "arun@example.com",
-      "description": "i am not getting placed ",
+      "id": "JtfoWtPQtSkrgWtivf9si",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
       "status": "open",
-      "createdAt": 1765109925185,
-      "departmentId": "Placement-officer",
-      "departmentName": "Placement Cell",
+      "createdAt": 1766466661324,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
       "agent": {
-        "department": "Placement Cell",
-        "urgency": "medium",
-        "summary": "Student is reporting difficulty with job placement.",
-        "action": "Placement Cell staff should contact the student to understand their specific challenges with job placement and offer guidance or support."
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Assign to academic counselor for further assistance and clarification on the issue"
       }
     },
     {
-      "id": "f-juQcsxK3fzwSfLhcZbI",
-      "studentId": "Csy0jZhs0EvotCdafg8Hg",
-      "studentName": "arun",
-      "studentEmail": "arun@example.com",
-      "description": "i am not getting placed ",
+      "id": "PIL_KS3ioGxIf-ZgO9CUP",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
       "status": "open",
-      "createdAt": 1765109949805,
-      "departmentId": "Placement-officer",
-      "departmentName": "Placement Cell",
+      "createdAt": 1766466778292,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
       "agent": {
-        "department": "Placement Cell",
-        "urgency": "medium",
-        "summary": "Student Arun is reporting difficulty in securing a placement opportunity.",
-        "action": "The Placement Cell should contact Arun to understand the specific issues, review their profile and eligibility, provide career counseling, and connect them with relevant placement opportunities or support."
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has a general academic issue",
+        "action": "Contact student via email to gather more information about the academic issue"
       }
-    }
-  ],
-  "students": [
-    {
-      "id": "Csy0jZhs0EvotCdafg8Hg",
-      "name": "arun",
-      "email": "arun@example.com"
     },
     {
-      "id": "8zV4wY6GnSxIRzYtYhXou",
-      "name": "ajay reddy",
-      "email": "ajay@example.com"
+      "id": "28mcv2uVzohbc8hZlBYn6",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766466794045,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Staff should contact the student to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "JYTgznjrgcwba1XSLFTEh",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766466803047,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Contact student via email to gather more information about the issue"
+      }
+    },
+    {
+      "id": "-gtrCq-MCk2DBy4zdidmj",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766466971445,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic related issue",
+        "action": "Contact student to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "48E60WiY-EppL2NdPKnaD",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766467084709,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Contact student via email to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "C4z1TckH-AnjjMHpqrh-u",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766467268345,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic related issue",
+        "action": "Contact student to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "tIn99jFp8OMDJLocoJeWx",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766467444312,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Contact student to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "iLwuPJ8UTqsDeAkoT95VH",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766472859796,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Assign to Academic Affairs staff for further clarification and assistance"
+      }
+    },
+    {
+      "id": "D4r8oFwXwQtSoj4qXfnOG",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766473048715,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic related issue",
+        "action": "Staff should contact the student to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "mh6IoS3DpG4rX3xGvIODF",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766473274708,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Contact student via email to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "ldvq3zbHBDiWIkrhPPQiq",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766473468558,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Contact the student to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "ACWcrgeH66Rp_iTU6F351",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "academic",
+      "status": "open",
+      "createdAt": 1766473499461,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "Student has an academic-related issue",
+        "action": "Contact the student to gather more information about the academic issue"
+      }
+    },
+    {
+      "id": "gAPF1Qho3cX1GLOquIozg",
+      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
+      "studentName": "vijesh",
+      "studentEmail": "vijeshsshetty@gmail.com",
+      "description": "my exam schedule",
+      "status": "open",
+      "createdAt": 1766494999003,
+      "departmentId": "Controller-of-Exam",
+      "departmentName": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "medium",
+        "summary": "Student is inquiring about their exam schedule",
+        "action": "Provide the student with their exam schedule or direct them to the relevant resource"
+      }
     }
   ],
   "departments": [
@@ -75,6 +267,13 @@
     {
       "id": "Placement-officer",
       "name": "Placement Cell"
+    }
+  ],
+  "students": [
+    {
+      "id": "e5yZ6a5kDYQohSvxxWMwY",
+      "name": "vijesh",
+      "email": "vijeshsshetty@gmail.com"
     }
   ]
 }
