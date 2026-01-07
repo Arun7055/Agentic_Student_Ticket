@@ -1,17 +1,1 @@
-
-from openai import OpenAI
-import os
-from dotenv import load_dotenv;
-load_dotenv()
-client = OpenAI(
-    api_key=os.getenv("GROQ_API_KEY"),
-    base_url="https://api.groq.com/openai/v1"
-
-)
-
-resp = client.chat.completions.create(
-    model="llama-3.1-8b-instant",
-    messages=[{"role": "user", "content": "Hello"}]
-)
-
-print(resp.choices[0].message.content)
+import subprocess import threading from flask import Flask, render_template from flask_socketio import SocketIO app = Flask(__name__) socketio = SocketIO(app, cors_allowed_origins="*") def stream_terminal(): # This simulates terminal activity count = 1 while True: socketio.emit("terminal_output", { "line": f"Backend running... tick {count}" }) count += 1 socketio.sleep(2) @app.route("/") def index(): return render_template("index.html") if __name__ == "__main__": threading.Thread(target=stream_terminal, daemon=True).start() socketio.run(app, debug=True)

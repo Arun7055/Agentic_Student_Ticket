@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Backend Terminal</title>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <style>
+    body { background: black; color: #00ff00; font-family: monospace; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h3>Backend Terminal Output</h3>
+  <pre id="terminal"></pre>
+
+  <script>
+    const socket = io();
+    socket.on("terminal", msg => {
+      document.getElementById("terminal").textContent += msg;
+    });
+  </script>
+</body>
+</html>

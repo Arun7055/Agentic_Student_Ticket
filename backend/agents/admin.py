@@ -64,7 +64,7 @@ real_hostel_email=RealHostelEmailTool()
 admin_followup_agent = Agent(
     role="Admin Issue Conversational Bot",
     goal="""
-    Collect hostel complaint details.
+    Collect Admin complaint details.
     Ask ONE question at a time.
 
      REQUIRED FIELDS (ask in this exact order):

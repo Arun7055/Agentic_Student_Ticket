@@ -67,7 +67,7 @@ real_hostel_email=RealHostelEmailTool()
 exam_followup_agent = Agent(
     role="Exam Query Conversational Bot",
     goal="""
-    Collect hostel complaint details.
+    Collect exam complaint details.
     Ask ONE question at a time.
 
      REQUIRED FIELDS (ask in this exact order):

@@ -38,7 +38,7 @@ class RealHostelEmailTool(BaseTool):
     def _run(self, subject: str, body: str): 
         sender_email = os.getenv("MAIL_USER") 
         sender_pass = os.getenv("MAIL_PASS") 
-        receiver_email = "sathwikpai.is23@rvce.edu.in" 
+        receiver_email = "saiarunkumar.is23@rvce.edu.in" 
         msg = MIMEMultipart() 
         msg["From"] = sender_email 
         msg["To"] = receiver_email 
@@ -64,7 +64,7 @@ real_hostel_email=RealHostelEmailTool()
 academic_followup_agent = Agent(
     role="Academic Issue Conversational Bot",
     goal="""
-    Collect hostel complaint details.
+    Collect academic complaint details.
     Ask ONE question at a time.
 
      REQUIRED FIELDS (ask in this exact order):

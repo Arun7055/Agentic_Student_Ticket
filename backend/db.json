@@ -1,241 +1,173 @@
 {
   "tickets": [
     {
-      "id": "JtfoWtPQtSkrgWtivf9si",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
+      "id": "0V_JOU6MY5aqokaPyMoK3",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "exam when",
       "status": "open",
-      "createdAt": 1766466661324,
+      "createdAt": 1766722536616,
+      "departmentId": "Controller-of-Exam",
+      "departmentName": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "low",
+        "summary": "Student is inquiring about exam schedule",
+        "action": "Respond to student with exam schedule information"
+      }
+    },
+    {
+      "id": "5zraRNk7_I-rgaMCAs5rU",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "oa not clearing what to do pls very high cgpa i have ",
+      "status": "open",
+      "createdAt": 1766727133629,
       "departmentId": "dean-academic",
       "departmentName": "Academic Affairs",
       "agent": {
         "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Assign to academic counselor for further assistance and clarification on the issue"
+        "urgency": "medium",
+        "summary": "Student is having issues with OA not clearing despite having a high CGPA",
+        "action": "Verify student's academic records and provide guidance on clearing OA"
       }
     },
     {
-      "id": "PIL_KS3ioGxIf-ZgO9CUP",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
+      "id": "mV5bX_hjz0mpICoPXJJ5c",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "online assesment not clearnign what to do",
       "status": "open",
-      "createdAt": 1766466778292,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has a general academic issue",
-        "action": "Contact student via email to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "28mcv2uVzohbc8hZlBYn6",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766466794045,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Staff should contact the student to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "JYTgznjrgcwba1XSLFTEh",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766466803047,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Contact student via email to gather more information about the issue"
-      }
-    },
-    {
-      "id": "-gtrCq-MCk2DBy4zdidmj",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766466971445,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic related issue",
-        "action": "Contact student to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "48E60WiY-EppL2NdPKnaD",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766467084709,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Contact student via email to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "C4z1TckH-AnjjMHpqrh-u",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766467268345,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic related issue",
-        "action": "Contact student to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "tIn99jFp8OMDJLocoJeWx",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766467444312,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Contact student to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "iLwuPJ8UTqsDeAkoT95VH",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766472859796,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Assign to Academic Affairs staff for further clarification and assistance"
-      }
-    },
-    {
-      "id": "D4r8oFwXwQtSoj4qXfnOG",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766473048715,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic related issue",
-        "action": "Staff should contact the student to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "mh6IoS3DpG4rX3xGvIODF",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766473274708,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Contact student via email to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "ldvq3zbHBDiWIkrhPPQiq",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766473468558,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Contact the student to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "ACWcrgeH66Rp_iTU6F351",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "academic",
-      "status": "open",
-      "createdAt": 1766473499461,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student has an academic-related issue",
-        "action": "Contact the student to gather more information about the academic issue"
-      }
-    },
-    {
-      "id": "gAPF1Qho3cX1GLOquIozg",
-      "studentId": "e5yZ6a5kDYQohSvxxWMwY",
-      "studentName": "vijesh",
-      "studentEmail": "vijeshsshetty@gmail.com",
-      "description": "my exam schedule",
-      "status": "open",
-      "createdAt": 1766494999003,
+      "createdAt": 1766727200331,
       "departmentId": "Controller-of-Exam",
       "departmentName": "Exam Cell",
       "agent": {
         "department": "Exam Cell",
         "urgency": "medium",
-        "summary": "Student is inquiring about their exam schedule",
-        "action": "Provide the student with their exam schedule or direct them to the relevant resource"
+        "summary": "Student is unclear about online assessment procedure",
+        "action": "Respond to student via email with clarification on online assessment process"
+      }
+    },
+    {
+      "id": "0Rvdk0fZq0qHLiEPsGmJ9",
+      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
+      "studentName": "ninnad",
+      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
+      "description": "academic card lost",
+      "status": "open",
+      "createdAt": 1766730275457,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "medium",
+        "summary": "Student's academic card is lost",
+        "action": "Issue a replacement academic card to the student"
+      }
+    },
+    {
+      "id": "_shNM9dbjOSx69GHeeIoD",
+      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
+      "studentName": "ninnad",
+      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
+      "description": "academic problems",
+      "status": "open",
+      "createdAt": 1766730384235,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "medium",
+        "summary": "Student is facing academic problems",
+        "action": "Staff should contact the student to understand and address the academic issues"
+      }
+    },
+    {
+      "id": "_mFBzumo-2VJNfgogR7uY",
+      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
+      "studentName": "ninnad",
+      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
+      "description": "academic problem",
+      "status": "open",
+      "createdAt": 1766730517746,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "medium",
+        "summary": "Student is facing an academic problem",
+        "action": "Contact the student to gather more information about the academic issue and provide necessary assistance"
+      }
+    },
+    {
+      "id": "SToFgD_e41cmTfL2YRU2-",
+      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
+      "studentName": "ninnad",
+      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
+      "description": "home",
+      "status": "open",
+      "createdAt": 1766730669473,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "low",
+        "summary": "Student query related to home, possibly hostel accommodation",
+        "action": "Staff should contact the student to clarify the issue and provide assistance"
+      }
+    },
+    {
+      "id": "R-k9658DoHqxtS5PPEYGI",
+      "studentId": "sRHIJM0RN-M9bPF06o1Dh",
+      "studentName": "gajesh",
+      "studentEmail": "kaizens.cy24@rvce.edu.in",
+      "description": "washrooms are not clean",
+      "status": "open",
+      "createdAt": 1766732000069,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "medium",
+        "summary": "Washrooms are not clean",
+        "action": "Clean the washrooms immediately and ensure regular maintenance"
+      }
+    },
+    {
+      "id": "WYpM1Uq2jBmcxQkOd5gJA",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "academic progress card is not recieved",
+      "status": "open",
+      "createdAt": 1766733431552,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "medium",
+        "summary": "Student has not received academic progress card",
+        "action": "Verify student records and send the academic progress card to the student"
+      }
+    },
+    {
+      "id": "yzDMgmVjAILDmLzYh6G7G",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "admin department",
+      "status": "open",
+      "createdAt": 1766733528776,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "low",
+        "summary": "Student has mentioned the admin department, possibly requiring assistance with an admin-related issue such as marks cards",
+        "action": "Assign staff from Admin Office to contact the student and provide necessary assistance"
       }
     }
   ],
@@ -274,6 +206,31 @@
       "id": "e5yZ6a5kDYQohSvxxWMwY",
       "name": "vijesh",
       "email": "vijeshsshetty@gmail.com"
+    },
+    {
+      "id": "5LeV7gL_j87aMY5RYIBdN",
+      "name": "ajay reddy",
+      "email": "ajay@example.com"
+    },
+    {
+      "id": "j-3QGohMNx4KhoGpFqWSM",
+      "name": "sathwik",
+      "email": "sathwik11112005@gmail.com"
+    },
+    {
+      "id": "sRHIJM0RN-M9bPF06o1Dh",
+      "name": "gajesh",
+      "email": "kaizens.cy24@rvce.edu.in"
+    },
+    {
+      "id": "bOKlMvHr3NqiMz0dUyFfE",
+      "name": "ninnad",
+      "email": "arkodeepb.cd25@rvce.edu.in"
+    },
+    {
+      "id": "EmCSe1Ax3YDLBSjNWP49R",
+      "name": "Ajay ",
+      "email": "ajadabjd@gmail.com"
     }
   ]
 }

@@ -137,10 +137,12 @@ email_agent = Agent(
     - Subject MUST include urgency in CAPS
     - Highlight urgency clearly in the body
     - don not use jhon doe as name
+    -dont put random names use only input data
     -<x> every where x to be replaced by real json value from questions
     - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):
     [<URGENCY> URGENCY] Hostel Issue – Block <block>, Room <room_no>
+    <give a breif explanation about the problem> in the place of
 
     BODY FORMAT (MANDATORY):
 
@@ -148,10 +150,10 @@ email_agent = Agent(
 
     My name is <student_name>, residing in Block <block>, Floor <floor>, Room <room_no>.
 
-    Issue: <problem_type>
+    Issue: <give a breif explanation about the problem>
     Urgency: <urgency>
 
-    Kindly arrange maintenance at the earliest.
+    kindly look into the matter.
 
     Thank you,
     <student_name>

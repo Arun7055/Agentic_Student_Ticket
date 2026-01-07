@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-
+from flask_cors import CORS
 # Import ALL department agents
 from hostel import hostel_agent
 from library import library_agent
@@ -11,7 +11,30 @@ from placement import placement_agent
 import logging
 
 
+
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+import json
+import os
+
+app = FastAPI()
+
+# Allow frontend to access API
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+DB_PATH = r"C:\student_ticket\Agentic_Student_Ticket\backend\db.json"
+
+
+
 app = Flask(__name__)
+CORS(app)
+
 
 
 
@@ -36,6 +59,9 @@ def validate_fields(data, required):
 # ============================================================
 # ✅ HOSTEL
 # ============================================================
+@app.get("/hostel/start")
+def health_check():
+    return {"status": "Hostel service running"}
 
 @app.post("/hostel/start")
 def hostel_start():
@@ -43,8 +69,9 @@ def hostel_start():
     error = validate_fields(data, ["ticketId", "description"])
     if error:
         return jsonify({"error": error}), 400
-
     return jsonify(hostel_agent(data["description"]))
+
+
 
 
 @app.post("/hostel/reply")
@@ -54,9 +81,32 @@ def hostel_reply():
     if error:
         return jsonify({"error": error}), 400
 
+
+
     return jsonify(hostel_agent(data["message"]))
 
 
+DB_PATH = r"C:\student_ticket\Agentic_Student_Ticket\backend\db.json"
+
+@app.get("/api/db")
+def get_db_content():
+    if not os.path.exists(DB_PATH):
+        return {
+            "error": "db.json not found",
+            "data": []
+        }
+
+    try:
+        with open(DB_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        return data  # returns ENTIRE db.json content
+
+    except Exception as e:
+        return {
+            "error": str(e),
+            "data": []
+        }
 # ============================================================
 # ✅ LIBRARY
 # ============================================================
@@ -204,4 +254,4 @@ def placement_reply():
 # ============================================================
 
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
+    app.run(host="127.0.0.1",port=5001, debug=True)

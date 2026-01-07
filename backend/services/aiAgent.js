@@ -150,6 +150,7 @@ Your tasks:
 2. Summarize the issue.
 3. Urgency (low / medium / high).
 4. Action staff should take.
+5. washrooms are not good to be assigned to 
 
 Choose ONE department:
 - Admin Office
