@@ -170,17 +170,19 @@ if (deptName === "placement cell") {
 export const listTickets = async (req, res) => {
   const { email } = req.params;
 
-  if (!email) {
-    return res.status(400).json({ error: "Student email is required" });
-  }
-
   await db.read();
 
-  const tickets = (db.data.tickets || []).filter(
-    t => t.studentEmail?.toLowerCase() === email.toLowerCase()
-  );
+  // If an email param is provided, return tickets for that student.
+  // Otherwise return all tickets (used by the `/list` route).
+  if (email) {
+    const tickets = (db.data.tickets || []).filter(
+      t => t.studentEmail?.toLowerCase() === email.toLowerCase()
+    );
+    return res.json(tickets);
+  }
 
-  res.json(tickets);
+  const allTickets = db.data.tickets || [];
+  res.json(allTickets);
   
 };
 
