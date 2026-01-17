@@ -16,6 +16,108 @@
         "summary": "Student is seeking an academic answer",
         "action": "Respond to student's query and provide relevant academic information"
       }
+    },
+    {
+      "id": "g7asE5bWl-pH19mdd8txU",
+      "studentId": "q2CF3SEBiHgBMD85WSw7i",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwikpai.is23@rvce.edu.in",
+      "description": "academic related issue",
+      "status": "open",
+      "createdAt": 1767940525047,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "medium",
+        "summary": "Student has an academic related issue",
+        "action": "Assign staff to contact student for more information and provide assistance"
+      }
+    },
+    {
+      "id": "SA_zl8DyWX3X9jQ9VHxD9",
+      "studentId": "q2CF3SEBiHgBMD85WSw7i",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwikpai.is23@rvce.edu.in",
+      "description": "fees not paid",
+      "status": "open",
+      "createdAt": 1767940936158,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "medium",
+        "summary": "Student's fees have not been paid",
+        "action": "Verify student's fee payment status and guide them through the payment process"
+      }
+    },
+    {
+      "id": "2KoKZ9MHlR0DjxKFOuYqo",
+      "studentId": "q2CF3SEBiHgBMD85WSw7i",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwikpai.is23@rvce.edu.in",
+      "description": "fees not piad\n",
+      "status": "open",
+      "createdAt": 1767940970020,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "medium",
+        "summary": "Student's fees have not been paid",
+        "action": "Verify student's fee payment status and assist with payment process"
+      }
+    },
+    {
+      "id": "EOLGo4wPcGBohMvWuQT7a",
+      "studentId": "q2CF3SEBiHgBMD85WSw7i",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwikpai.is23@rvce.edu.in",
+      "description": "academic related issue",
+      "status": "open",
+      "createdAt": 1767941007419,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "medium",
+        "summary": "Student has an academic related issue",
+        "action": "Assign staff to contact student and resolve the issue"
+      }
+    },
+    {
+      "id": "0VAYlObbgFNXXrASvZYm3",
+      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
+      "studentName": "ninnad",
+      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
+      "description": "i didnt exam hall ticket ",
+      "status": "open",
+      "createdAt": 1768675259166,
+      "departmentId": "Controller-of-Exam",
+      "departmentName": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "high",
+        "summary": "Student is unable to find their exam hall ticket",
+        "action": "Staff should assist the student in retrieving or reissuing their exam hall ticket"
+      }
+    },
+    {
+      "id": "M6QnwDHn79HzvujGY162x",
+      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
+      "studentName": "ninnad",
+      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
+      "description": "book tore\n",
+      "status": "open",
+      "createdAt": 1768675441253,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "low",
+        "summary": "Student reported issue with book store",
+        "action": "Admin staff should contact the student to clarify the issue and provide assistance"
+      }
     }
   ],
   "departments": [
@@ -78,6 +180,11 @@
       "id": "EmCSe1Ax3YDLBSjNWP49R",
       "name": "Ajay ",
       "email": "ajadabjd@gmail.com"
+    },
+    {
+      "id": "q2CF3SEBiHgBMD85WSw7i",
+      "name": "sathwik pai",
+      "email": "sathwikpai.is23@rvce.edu.in"
     }
   ]
 }
