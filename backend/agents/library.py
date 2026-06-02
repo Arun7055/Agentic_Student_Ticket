@@ -31,7 +31,7 @@ class EmailInput(BaseModel):
 
 class RealHostelEmailTool(BaseTool): 
     name: str = "real_hostel_email" 
-    description: str = "Send real hostel complaint email using SMTP" 
+    description: str = "Send real library complaint email using SMTP" 
     args_schema: Type[BaseModel] = EmailInput 
     def _run(self, subject: str, body: str): 
         sender_email = os.getenv("MAIL_USER") 
@@ -74,9 +74,9 @@ library_followup_agent = Agent(
     1. Student name
     2. USN
     3.Department
-    4. Book sectio
+    4. Book section
     5. Book Name
-    6.Issue type (missing pages / torn / unavailable / lost / wrong entry)
+    6.problem description(missing pages / torn / unavailable / lost / wrong entry)
 
 
     IMPORTANT RULES:
@@ -87,14 +87,14 @@ library_followup_agent = Agent(
     - End with EXACTLY this sentence:
       "Thank you. I have all the information and will now file your complaint.
     """,
-    backstory="Expert assistant for library issue reporting.",
+    backstory="Expert library maintanence agent.",
     memory=True,
     allow_delegation=False,
     llm=llm
 )
 
 library_structuring_agent = Agent(
-    role="Library JSON Structuring Agent",
+    role="Library Query Structuring Agent",
     goal="""
     Convert final conversation into valid JSON:
      RULES:
@@ -106,18 +106,19 @@ library_structuring_agent = Agent(
     - Medium → qeury about book
     - Low → minor issues
     - Do not put random informations in between other then json
-
+     OUTPUT JSON ONLY:
     {
       "student_name": "",
+      "USN ": "",
       "department": "",
       "book_section": "",
       "book_name": "",
-      "issue_type": "",
+      "problem_description": "",
       "urgency": "",
       "full_summary": ""
     }
     """,
-    backstory="JSON structuring specialist.",
+    backstory="Expert in structuring academic data into JSON.",
     memory=False,
     allow_delegation=False,
     llm=llm
@@ -125,7 +126,7 @@ library_structuring_agent = Agent(
 
 
 library_email_agent = Agent(
-    role="Library Email Formatting Agent",
+    role="Email Formatting Agent",
     goal="""
     You are given a structured JSON with library complaint details.
 
@@ -138,8 +139,7 @@ library_email_agent = Agent(
     - Highlight urgency clearly in the body
     - Do not use generic names like John Doe
     - Replace every <x> with the real value from JSON
-    - Format email properly with one line per item
-
+    - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):
     [<URGENCY> URGENCY] Library Issue – Department <department>, 
 
@@ -149,7 +149,7 @@ library_email_agent = Agent(
 
     My name is <student_name>, Book section <book_section>,Book name<book_name>
 
-    Issue: <problem_type>
+    Issue: <<problem_description>>
     Urgency: <urgency>
 
     Kindly address this at the earliest.
@@ -161,10 +161,11 @@ library_email_agent = Agent(
     memory=False,
     allow_delegation=False,
     llm=llm
+    
 )
 
 library_dispatcher_agent = Agent(
-    role="Library Complaint Dispatcher",
+    role="Library  Dispatcher",
     goal="""
     You will ONLY send an email if ALL conditions are met:
 
@@ -184,6 +185,8 @@ library_dispatcher_agent = Agent(
 
     WHEN CONDITIONS ARE MET:
     - Call real_hostel_email exactly once
+    do not send mail before all conditions are met 
+    -while sending mail have all the info taken from user in place of placeholders dont put random info
     """,
     backstory="Ur a dispatcher Dispatcher Agent",
     tools=[real_hostel_email],

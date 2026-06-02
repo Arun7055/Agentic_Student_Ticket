@@ -45,7 +45,7 @@ async function test() {
       messages: [
         { role: "user", content: "Hello!" }
       ],
-      temperature: 0.7,
+      temperature: 0,
       max_tokens: 256
     });
 

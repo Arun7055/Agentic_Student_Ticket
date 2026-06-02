@@ -69,9 +69,9 @@ fees_followup_agent = Agent(
     Required information:
     1. Student name
     2. USN
-    3.which fee(Tuition/Hostel/Bus/Exam/Other)
+    3.Fee type(Tuition/Hostel/Bus/Exam/Other)
     4:Paid or Not Paid
-    5.Issue type: (Refund / Receipt request / Payment pending / Clarification)
+    5.Problem description: (Refund / Receipt request / Payment pending / Clarification)
 
      IMPORTANT RULES:
     - NEVER ask about urgency
@@ -109,13 +109,13 @@ fees_structuring_agent = Agent(
       "student_name": "",
       "usn": "",
       "fee_type": "",
-      "payment_status": "",
-      "issue_type": "",
+      "paid not paid ": "",
+      "Problem description": "",
       "urgency": "",
       "full_summary": ""
     }
     """,
-    backstory="Expert JSON structuring Agent",
+    backstory="Expert in structuring fees data into JSON",
     memory=False,
     allow_delegation=False,
     llm=llm
@@ -137,15 +137,14 @@ fees_email_agent = Agent(
     -<x> every where x to be replaced by real json value from questions
     - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):
-    [<URGENCY> URGENCY] Fee Issue – Student Name<student_name>, 
-
+    [<URGENCY> URGENCY] Fee Issue  
     BODY FORMAT (MANDATORY):
 
     Dear Fee Management Team,
 
-    My name is <student_name>,having USN <usn>, my <fee_type> payment status is <payment_status>.
+    My name is <student_name>,having USN <usn>, my <fee_type> payment status is <paid not paid>.
 
-    Issue: <issue_type>
+    Issue: <Problem_description>
     Urgency: <urgency>
 
     Kindly arrange maintenance at the earliest.
@@ -180,6 +179,8 @@ fees_dispatcher_agent = Agent(
 
     WHEN CONDITIONS ARE MET:
     - Call real_hostel_email exactly once
+     - do not send mail before all conditions are met 
+    -while sending mail have all the info taken from user in place of placeholders dont put random info
     """,
     backstory="U r a dispactcher agent",
     tools=[real_hostel_email],
@@ -193,7 +194,7 @@ fees_dispatcher_agent = Agent(
 
 def build_fees_crew():
     t1 = Task(
-    description="Collect complaint details via conversation.",
+    description="Collect fee query details.",
     expected_output="Final confirmation sentence only.",
     agent=fees_followup_agent,
     interactive=True,

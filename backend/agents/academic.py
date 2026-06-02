@@ -38,7 +38,7 @@ class RealHostelEmailTool(BaseTool):
     def _run(self, subject: str, body: str): 
         sender_email = os.getenv("MAIL_USER") 
         sender_pass = os.getenv("MAIL_PASS") 
-        receiver_email = "saiarunkumar.is23@rvce.edu.in" 
+        receiver_email = "jaihanumanmood@gmail.com" 
         msg = MIMEMultipart() 
         msg["From"] = sender_email 
         msg["To"] = receiver_email 
@@ -96,13 +96,12 @@ academic_structuring_agent = Agent(
 
     RULES:
     - Extract REAL values from conversation
-    - DO NOT leave any field empty
+   
     - Infer urgency internally (do NOT ask user)
 
     Urgency rules:
     - guess everthing as medium
-    - Medium → toilet, leakage, furniture
-    
+    - 
     - Do not put random informations in between other then json
 
     OUTPUT JSON ONLY:
@@ -134,7 +133,7 @@ academic_email_agent = Agent(
     - Keep the email SHORT (max 8–10 lines)
     - Subject MUST include urgency in CAPS
     - Highlight urgency clearly in the body
-    - don not use jhon doe as name
+    - do not use jhon doe as name
     -<x> every where x to be replaced by real json value from questions
     - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):

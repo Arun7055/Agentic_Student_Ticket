@@ -68,7 +68,9 @@ placement_followup_agent = Agent(
     2. USN
     3. Branch
     4. Company name
-    5.Specific concern
+    5.Problem description
+
+
     IMPORTANT RULES:
     - NEVER ask about urgency
     - NEVER ask the question again and again
@@ -77,7 +79,7 @@ placement_followup_agent = Agent(
     - End with EXACTLY this sentence:
       "Thank you. I have all the information and will now file your complaint."
     """,
-    backstory="Expert Placement query assistant",
+    backstory="Expert placement maintanence agent",
     memory=True,
     allow_delegation=False,
     llm=llm
@@ -90,7 +92,6 @@ placement_structuring_agent = Agent(
     
     RULES:
     - Extract REAL values from conversation
-    - DO NOT leave any field empty
     - Infer urgency internally (do NOT ask user)
 
     Urgency rules:
@@ -104,19 +105,19 @@ placement_structuring_agent = Agent(
       "usn": "",
       "branch": "",
       "company_name": "",
-      "specific_concern": "",
-
+      "Problem description": "",
+      "urgency": "",
       "full_summary": ""
     }
     """,
-    backstory="Expert in structuring placement queries into JSON format.",
+    backstory="Expert in structuring placement data into JSON format.",
     memory=False,
     allow_delegation=False,
     llm=llm
 )
 
 placement_email_agent = Agent(
-    role="Formal Placement Email Writer",
+    role="Email Formatting Agent",
     goal="""
 You are given a structured JSON with complaint details.
 
@@ -127,7 +128,7 @@ You are given a structured JSON with complaint details.
     - Keep the email SHORT (max 8–10 lines)
     - Subject MUST include urgency in CAPS
     - Highlight urgency clearly in the body
-    - don not use jhon doe as name
+    - do not use jhon doe as name
     -<x> every where x to be replaced by real json value from questions
     - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):
@@ -135,11 +136,11 @@ You are given a structured JSON with complaint details.
 
     BODY FORMAT (MANDATORY):
 
-    Dear Hostel Management Team,
+    Dear Placment Management ,
 
     My name is <student_name>,with USN <usn>, Branch <branch>, Company <company_name>.
 
-    Issue: <specific_concern>
+    Issue: <Problem_description>
     Urgency: <urgency>
 
     Kindly arrange maintenance at the earliest.
@@ -157,7 +158,7 @@ You are given a structured JSON with complaint details.
 )
 
 placement_dispatcher_agent = Agent(
-    role="Placement Email Dispatcher",
+    role="Placement Dispatcher",
     goal= """You will ONLY send an email if ALL conditions are met:
 
     CONDITIONS (MANDATORY):
@@ -176,6 +177,8 @@ placement_dispatcher_agent = Agent(
 
     WHEN CONDITIONS ARE MET:
     - Call real_hostel_email exactly once
+     - do not send mail before all conditions are met 
+    -while sending mail have all the info taken from user in place of placeholders dont put random info
     """,
     backstory="U r a dispactcher agent",
     tools=[real_hostel_email],

@@ -32,7 +32,7 @@ class EmailInput(BaseModel):
 
 class RealHostelEmailTool(BaseTool): 
     name: str = "real_hostel_email" 
-    description: str = "Send real hostel complaint email using SMTP" 
+    description: str = "Send real admin complaint email using SMTP" 
     args_schema: Type[BaseModel] = EmailInput 
     def _run(self, subject: str, body: str): 
         sender_email = os.getenv("MAIL_USER") 
@@ -69,10 +69,10 @@ admin_followup_agent = Agent(
 
      REQUIRED FIELDS (ask in this exact order):
     1. Student name
-    2.USN
+    2. USN
     3. Type of Request
-    4. Detailed problem/request description
-    5. Needed solution by
+    4. Problem description
+    
 
 
     IMPORTANT RULES:
@@ -83,26 +83,24 @@ admin_followup_agent = Agent(
     - End with EXACTLY this sentence:
       "Thank you. I have all the information and will now file your complaint."
     """,
-    backstory="Expert in handling all general college admin requests.",
+    backstory="Expert admin maintanence agent",
     memory=True,
     allow_delegation=False,
     llm=llm
 )
 
 admin_structuring_agent = Agent(
-    role="Admin Request Structuring Agent",
+    role="Admin Query Structuring Agent",
     goal="""
     Convert the final conversation into JSON.
 
     RULES:
     - Extract REAL values from conversation
-    - DO NOT leave any field empty
+
     - Infer urgency internally (do NOT ask user)
 
     Urgency rules:
-    - High → Name not in exam list
-    - Medium → marks card errors
-    - Low → issue of marks card
+    - guess everthing as medium
     - Do not put random informations in between other then json
 
     OUTPUT JSON ONLY:
@@ -110,13 +108,13 @@ admin_structuring_agent = Agent(
       "student_name": "",
       "USN": "",
       "Type_of_request": "",
-      "Detailed_problem": "",
+      "Problem_description": "",
       "urgency": "",
       "full_summary": ""
     }
     """
    ,
-    backstory="Organises all admin requests into structured format.",
+    backstory="Expert in structuring admin data into JSON.",
     memory=False,
     allow_delegation=False,
     llm=llm
@@ -134,7 +132,7 @@ admin_email_agent = Agent(
     - Keep the email SHORT (max 8–10 lines)
     - Subject MUST include urgency in CAPS
     - Highlight urgency clearly in the body
-    - don not use jhon doe as name
+    - do not use random names as name
     -<x> every where x to be replaced by real json value from questions
     - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):
@@ -144,9 +142,9 @@ admin_email_agent = Agent(
 
     Dear Admin Team,
 
-    My name is <student_name>, with USN <usn>, any with the request related to <Type_of_request>.
+    My name is <student_name>, with USN <USN>, any with the request related to <Type_of_request>.
 
-    Issue: <Detailed_problem>
+    Issue: <Problem_description>
     Urgency: <urgency>
 
     Kindly look into the matter at the earliest.
@@ -160,7 +158,7 @@ admin_email_agent = Agent(
     llm=llm
 )
 admin_dispatcher_agent = Agent(
-    role="Hostel Dispatcher",
+    role="admin Dispatcher",
     goal="""
     You will ONLY send an email if ALL conditions are met:
 
@@ -180,6 +178,8 @@ admin_dispatcher_agent = Agent(
 
     WHEN CONDITIONS ARE MET:
     - Call real_hostel_email exactly once
+    - do not send mail before all conditions are met 
+    -while sending mail have all the info taken from user in place of placeholders dont put random info
     """,
     backstory="U r a dispactcher agent",
     tools=[real_hostel_email],
@@ -194,7 +194,7 @@ admin_dispatcher_agent = Agent(
 
 def build_admin_crew():
     t1 = Task(
-        description="Collect admin request details from student.",
+        description="Collect admin query details.",
         expected_output="Final confirmation sentence only.",
         agent=admin_followup_agent,
         interactive=True,

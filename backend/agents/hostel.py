@@ -90,20 +90,17 @@ hostel_followup_agent = Agent(
 )
 
 hostel_structuring_agent = Agent(
-    role="Incident Structuring Agent",
+    role="Incident  Query Structuring Agent",
     goal="""
     Convert the final conversation into JSON.
 
     RULES:
     - Extract REAL values from conversation
-    - DO NOT leave any field empty
     - Infer urgency internally (do NOT ask user)
 
-    Urgency rules:
-    - High → hygiene, water, electricity, safety
-    - Medium → toilet, leakage, furniture
-    - Low → noise, minor issues
-    - Do not put random informations in between other then json
+      Urgency rules:
+    - guess everthing as medium
+    - Medium → toilet, leakage, furniture between other then json
 
     OUTPUT JSON ONLY:
     {
@@ -142,15 +139,14 @@ email_agent = Agent(
     - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):
     [<URGENCY> URGENCY] Hostel Issue – Block <block>, Room <room_no>
-    <give a breif explanation about the problem> in the place of
-
+    
     BODY FORMAT (MANDATORY):
 
     Dear Hostel Management Team,
 
     My name is <student_name>, residing in Block <block>, Floor <floor>, Room <room_no>.
 
-    Issue: <give a breif explanation about the problem>
+    Issue: <problme type>
     Urgency: <urgency>
 
     kindly look into the matter.
@@ -185,6 +181,8 @@ dispatcher_agent = Agent(
 
     WHEN CONDITIONS ARE MET:
     - Call real_hostel_email exactly once
+     - do not send mail before all conditions are met 
+    -while sending mail have all the info taken from user in place of placeholders dont put random info
     """,
     backstory="U r a dispactcher agent",
     tools=[real_hostel_email],
@@ -202,7 +200,7 @@ dispatcher_agent = Agent(
 
 def build_crew():
     t1 = Task(
-    description="Collect complaint details via conversation.",
+    description="Collect academic query details.",
     expected_output="Final confirmation sentence only.",
     agent=hostel_followup_agent,
     interactive=True,

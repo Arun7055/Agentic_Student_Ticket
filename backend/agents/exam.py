@@ -20,7 +20,7 @@ from crewai.tools import BaseTool
 
 
 llm = LLM(
-    model="llama-3.3-70b-versatile",   # ✅ ACTIVE Groq model
+    model="llama-3.3-70b-versatile", 
     api_key=os.getenv("GROQ_API_KEY"),
     provider="openai",
     base_url="https://api.groq.com/openai/v1",
@@ -65,7 +65,7 @@ real_hostel_email=RealHostelEmailTool()
 # ============================================
 
 exam_followup_agent = Agent(
-    role="Exam Query Conversational Bot",
+    role="Exam Issue Conversational Bot",
     goal="""
     Collect exam complaint details.
     Ask ONE question at a time.
@@ -73,12 +73,12 @@ exam_followup_agent = Agent(
      REQUIRED FIELDS (ask in this exact order):
     1. Student name
     2. USN
-    3. Department
+    3. Department 
     4.Query Type:
          (Exam dates / Paper correction status / Hall ticket issues /
-          Backlog exam / Revaluation / Timetable / Format doubts /
-          Internal marks / Attendance shortage / General exam queries)
-    5.Subject name (if relevant)
+          Backlog exam / Revaluation / Timetable / Format doubts)
+         
+    5.Problem description
 
 
     IMPORTANT RULES:
@@ -96,19 +96,18 @@ exam_followup_agent = Agent(
 )
 
 exam_structuring_agent = Agent(
-    role="Exam Query Structuring Specialist",
+    role="Exam Query Structuring agent",
     goal="""
     Convert the final conversation into JSON.
 
     RULES:
     - Extract REAL values from conversation
-    - DO NOT leave any field empty
+  
     - Infer urgency internally (do NOT ask user)
 
     Urgency rules:
-    - High → fastrack exam,
-    - Medium → exam time table
-    - Low → previous year question papers
+    - guess everthing as medium
+
     - Do not put random informations in between other then json
 
     OUTPUT JSON ONLY:
@@ -117,11 +116,12 @@ exam_structuring_agent = Agent(
       "USN": "",
       "Department": "",
       "Query_type": "",
+      "problem_description": "",
       "urgency": "",
       "full_summary": ""
     }
     """,
-    backstory="Expert JSON structuring Agent",
+    backstory="Expert in structuring exam data into JSON.",
     memory=False,
     allow_delegation=False,
     llm=llm
@@ -143,15 +143,15 @@ exam_email_agent = Agent(
     -<x> every where x to be replaced by real json value from questions
     - mail should be properly formatted like one line after other line
     SUBJECT FORMAT (MANDATORY):
-    [<URGENCY> URGENCY] exam Issue for student <student_name>, USN <USN>
+    [<URGENCY> URGENCY] 
 
     BODY FORMAT (MANDATORY):
 
     Dear Exam Management Team,
 
-    My name is <student_name>, student <student_name>, USN <USN>
+    My name is <student_name>, USN <USN> ,of department <Department>
 
-    Issue: <Query_type>
+    Issue:<problem_description>
     Urgency: <urgency>
 
     Kindly arrange maintenance at the earliest.
@@ -165,7 +165,7 @@ exam_email_agent = Agent(
     llm=llm
 )
 exam_dispatcher_agent = Agent(
-    role="Hostel Dispatcher",
+    role="Exam Dispatcher",
     goal="""
     You will ONLY send an email if ALL conditions are met:
 
@@ -177,6 +177,7 @@ exam_dispatcher_agent = Agent(
         [HIGH URGENCY], [MEDIUM URGENCY], [LOW URGENCY]
     - Body must NOT contain placeholders like:
         [name], [USN], <student_name>, etc.
+    
 
     IF CONDITIONS ARE NOT MET:
     - DO NOTHING
@@ -185,6 +186,8 @@ exam_dispatcher_agent = Agent(
 
     WHEN CONDITIONS ARE MET:
     - Call real_hostel_email exactly once
+    - do not send mail before all conditions are met 
+    -while sending mail have all the info taken from user in place of placeholders dont put random info
     """,
     backstory="U r a dispactcher agent",
     tools=[real_hostel_email],

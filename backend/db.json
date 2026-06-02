@@ -1,122 +1,479 @@
 {
   "tickets": [
     {
-      "id": "Q6KQNkHyrC-EytVx8sdn7",
-      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
-      "studentName": "ninnad",
-      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
-      "description": "academic answer",
+      "id": "L8U4LnqFbqWotlNCNrr6D",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "i have applied for pvp but the result showing paper is lost ",
       "status": "open",
-      "createdAt": 1767848077237,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "low",
-        "summary": "Student is seeking an academic answer",
-        "action": "Respond to student's query and provide relevant academic information"
-      }
-    },
-    {
-      "id": "g7asE5bWl-pH19mdd8txU",
-      "studentId": "q2CF3SEBiHgBMD85WSw7i",
-      "studentName": "sathwik pai",
-      "studentEmail": "sathwikpai.is23@rvce.edu.in",
-      "description": "academic related issue",
-      "status": "open",
-      "createdAt": 1767940525047,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "medium",
-        "summary": "Student has an academic related issue",
-        "action": "Assign staff to contact student for more information and provide assistance"
-      }
-    },
-    {
-      "id": "SA_zl8DyWX3X9jQ9VHxD9",
-      "studentId": "q2CF3SEBiHgBMD85WSw7i",
-      "studentName": "sathwik pai",
-      "studentEmail": "sathwikpai.is23@rvce.edu.in",
-      "description": "fees not paid",
-      "status": "open",
-      "createdAt": 1767940936158,
-      "departmentId": "fees-incharge",
-      "departmentName": "Fee Office",
-      "agent": {
-        "department": "Fee Office",
-        "urgency": "medium",
-        "summary": "Student's fees have not been paid",
-        "action": "Verify student's fee payment status and guide them through the payment process"
-      }
-    },
-    {
-      "id": "2KoKZ9MHlR0DjxKFOuYqo",
-      "studentId": "q2CF3SEBiHgBMD85WSw7i",
-      "studentName": "sathwik pai",
-      "studentEmail": "sathwikpai.is23@rvce.edu.in",
-      "description": "fees not piad\n",
-      "status": "open",
-      "createdAt": 1767940970020,
-      "departmentId": "fees-incharge",
-      "departmentName": "Fee Office",
-      "agent": {
-        "department": "Fee Office",
-        "urgency": "medium",
-        "summary": "Student's fees have not been paid",
-        "action": "Verify student's fee payment status and assist with payment process"
-      }
-    },
-    {
-      "id": "EOLGo4wPcGBohMvWuQT7a",
-      "studentId": "q2CF3SEBiHgBMD85WSw7i",
-      "studentName": "sathwik pai",
-      "studentEmail": "sathwikpai.is23@rvce.edu.in",
-      "description": "academic related issue",
-      "status": "open",
-      "createdAt": 1767941007419,
-      "departmentId": "dean-academic",
-      "departmentName": "Academic Affairs",
-      "agent": {
-        "department": "Academic Affairs",
-        "urgency": "medium",
-        "summary": "Student has an academic related issue",
-        "action": "Assign staff to contact student and resolve the issue"
-      }
-    },
-    {
-      "id": "0VAYlObbgFNXXrASvZYm3",
-      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
-      "studentName": "ninnad",
-      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
-      "description": "i didnt exam hall ticket ",
-      "status": "open",
-      "createdAt": 1768675259166,
+      "createdAt": 1770277901517,
       "departmentId": "Controller-of-Exam",
       "departmentName": "Exam Cell",
       "agent": {
         "department": "Exam Cell",
-        "urgency": "high",
-        "summary": "Student is unable to find their exam hall ticket",
-        "action": "Staff should assist the student in retrieving or reissuing their exam hall ticket"
+        "urgency": "medium",
+        "summary": "Student's PVP result shows paper is lost",
+        "action": "Verify student's PVP application and result, investigate the issue and provide a resolution"
       }
     },
     {
-      "id": "M6QnwDHn79HzvujGY162x",
-      "studentId": "bOKlMvHr3NqiMz0dUyFfE",
-      "studentName": "ninnad",
-      "studentEmail": "arkodeepb.cd25@rvce.edu.in",
-      "description": "book tore\n",
+      "id": "tfG5LKBqYTrFty_zZJM_I",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "exam related query",
       "status": "open",
-      "createdAt": 1768675441253,
+      "createdAt": 1770278326405,
+      "departmentId": "Controller-of-Exam",
+      "departmentName": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "medium",
+        "summary": "Student has an exam related query",
+        "action": "Respond to student email to clarify the query and provide necessary information"
+      }
+    },
+    {
+      "id": "rWDUYyM-JO2LcMLI9bOll",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "exam",
+      "status": "open",
+      "createdAt": 1770278508224,
+      "departmentId": "Controller-of-Exam",
+      "departmentName": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "low",
+        "summary": "Student has a concern related to an exam",
+        "action": "Staff should contact the student to clarify the issue and provide assistance"
+      }
+    },
+    {
+      "id": "F7sU9t0NvWk1aTvtRI81t",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "i want my grade reports",
+      "status": "open",
+      "createdAt": 1770278935366,
       "departmentId": "dept-admin",
       "departmentName": "Admin Office",
       "agent": {
         "department": "Admin Office",
         "urgency": "low",
-        "summary": "Student reported issue with book store",
-        "action": "Admin staff should contact the student to clarify the issue and provide assistance"
+        "summary": "Student is requesting their grade reports",
+        "action": "Provide the student with their grade reports"
+      }
+    },
+    {
+      "id": "uxgSZ5JzE6ddZxYcBXrOO",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "i want my grade reports",
+      "status": "open",
+      "createdAt": 1770278961133,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "low",
+        "summary": "Student is requesting their grade reports",
+        "action": "Provide the student with their grade reports"
+      }
+    },
+    {
+      "id": "QD-z_1ujdzvRWxp4PTxYM",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "hostel toiltes",
+      "status": "open",
+      "createdAt": 1770279666816,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "medium",
+        "summary": "Student is reporting issues with hostel toilets",
+        "action": "Inspect and repair/maintain the hostel toilets to ensure they are in good condition"
+      }
+    },
+    {
+      "id": "tE2joZtPdRUcz1XVh79CY",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "fee issue",
+      "status": "open",
+      "createdAt": 1770279901257,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "medium",
+        "summary": "Student is experiencing a fee issue",
+        "action": "Verify student's fee payment status and resolve the issue"
+      }
+    },
+    {
+      "id": "ZxixxXHMlRsbaUaEVtjTk",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "fees not getting paid",
+      "status": "open",
+      "createdAt": 1770286198624,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "medium",
+        "summary": "Student is having trouble paying fees",
+        "action": "Verify payment status and assist student with fee payment process"
+      }
+    },
+    {
+      "id": "J3i8Y452oyg_Ok9xmVLXd",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "fees  not getting paid",
+      "status": "open",
+      "createdAt": 1770286258308,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "medium",
+        "summary": "Student is having trouble paying fees",
+        "action": "Contact student to resolve payment issue"
+      }
+    },
+    {
+      "id": "C82CgI44ACJNNYsan4UdI",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "library issue\n",
+      "status": "open",
+      "createdAt": 1777394951209,
+      "departmentId": "librarian",
+      "departmentName": "Library",
+      "agent": {
+        "department": "Library",
+        "urgency": "low",
+        "summary": "The student is experiencing an issue related to the library",
+        "action": "Library staff should investigate and resolve the library issue reported by the student"
+      }
+    },
+    {
+      "id": "fYdNG4iUgNa6MppxfUoDx",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "my interview for company onepay is schedules tommmarow but my name is not in the list of shortlisted students ",
+      "status": "open",
+      "createdAt": 1777395453361,
+      "departmentId": "Placement-officer",
+      "departmentName": "Placement Cell",
+      "agent": {
+        "department": "Placement Cell",
+        "urgency": "high",
+        "summary": "Student's name is missing from the list of shortlisted students for an interview with company Onepay",
+        "action": "Verify the list and contact the company to resolve the issue before the interview scheduled for tomorrow"
+      }
+    },
+    {
+      "id": "2zUPwlYouYNP_WMP1OTLI",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "fees of hostel yet to be paid \n",
+      "status": "open",
+      "createdAt": 1777398798433,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "medium",
+        "summary": "Student's hostel fees are yet to be paid",
+        "action": "Contact the student to clarify the payment status and provide necessary assistance"
+      }
+    },
+    {
+      "id": "oOgWI07bzLBUzYHvEc_TD",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "id card not recieved \n",
+      "status": "open",
+      "createdAt": 1777398918202,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "low",
+        "summary": "Student has not received their ID card",
+        "action": "Verify student's details and dispatch the ID card"
+      }
+    },
+    {
+      "id": "U4YyerAiF-2yErAT0oKwZ",
+      "studentId": "q2CF3SEBiHgBMD85WSw7i",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwikpai.is23@rvce.edu.in",
+      "description": "id card missing \n",
+      "status": "open",
+      "createdAt": 1777399205577,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "low",
+        "summary": "Student's ID card is missing",
+        "action": "Issue a new ID card to the student"
+      }
+    },
+    {
+      "id": "fV1RsNngPAyfeu3xXDbS_",
+      "studentId": "j-3QGohMNx4KhoGpFqWSM",
+      "studentName": "sathwik",
+      "studentEmail": "sathwik11112005@gmail.com",
+      "description": "hostel office \n",
+      "status": "open",
+      "createdAt": 1777399249459,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "medium",
+        "summary": "Issue with hostel",
+        "action": "Investigate and resolve the hostel-related issue reported by the student"
+      }
+    },
+    {
+      "id": "2UIWUKBHkwb-5D4ZMB_81",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "fee not paid \n",
+      "status": "open",
+      "createdAt": 1777399379069,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "low",
+        "summary": "Student has not paid their fee",
+        "action": "Verify student's fee status and contact them for payment"
+      }
+    },
+    {
+      "id": "s6Q7HOKY2ezzLDOfwrWvA",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "placement ceell\n",
+      "status": "open",
+      "createdAt": 1777399476814,
+      "departmentId": "Placement-officer",
+      "departmentName": "Placement Cell",
+      "agent": {
+        "department": "Placement Cell",
+        "urgency": "low",
+        "summary": "Student has issue with placement cell",
+        "action": "Contact student to clarify issue with placement cell"
+      }
+    },
+    {
+      "id": "q50yg5dWRabnnK3NcV8xN",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "exam cell\n",
+      "status": "open",
+      "createdAt": 1777399516488,
+      "departmentId": "Controller-of-Exam",
+      "departmentName": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "low",
+        "summary": "Student has mentioned the exam cell but hasn't specified the issue",
+        "action": "Contact the student for more information about the issue related to the exam cell"
+      }
+    },
+    {
+      "id": "zsK75fW6Acu0iJq-5plyP",
+      "studentId": "sRHIJM0RN-M9bPF06o1Dh",
+      "studentName": "gajesh",
+      "studentEmail": "kaizens.cy24@rvce.edu.in",
+      "description": "acdemic calenders not yet released ",
+      "status": "open",
+      "createdAt": 1777399598654,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "low",
+        "summary": "The student is inquiring about the release of academic calendars",
+        "action": "Respond to the student with an update on the status of academic calendar release and provide a timeline for its release if available"
+      }
+    },
+    {
+      "id": "46bqRxTetGpYv0yxcq183",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "exam cell issue\n",
+      "status": "open",
+      "createdAt": 1777399981970,
+      "departmentId": "Controller-of-Exam",
+      "departmentName": "Exam Cell",
+      "agent": {
+        "department": "Exam Cell",
+        "urgency": "medium",
+        "summary": "The student is experiencing an issue related to the exam cell",
+        "action": "The staff should investigate and resolve the exam cell issue reported by the student"
+      }
+    },
+    {
+      "id": "gDRcnKWEne7FI3HjXW6xg",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "hsotel isue\n",
+      "status": "open",
+      "createdAt": 1777400020657,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "medium",
+        "summary": "Student is experiencing issues with the hostel",
+        "action": "Investigate and resolve the hostel issue reported by the student"
+      }
+    },
+    {
+      "id": "JLdQHoU7jzKlAxyx-C30R",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "fee office issue\n",
+      "status": "open",
+      "createdAt": 1777400169754,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "low",
+        "summary": "Issue with the fee office",
+        "action": "Contact the student to gather more information about the fee office issue and provide assistance"
+      }
+    },
+    {
+      "id": "b70svZ2Elu0dupoP0NqdV",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "rvce website not working ",
+      "status": "open",
+      "createdAt": 1777400611712,
+      "departmentId": "dept-admin",
+      "departmentName": "Admin Office",
+      "agent": {
+        "department": "Admin Office",
+        "urgency": "medium",
+        "summary": "RVCE website is not working",
+        "action": "Investigate and resolve the website issue"
+      }
+    },
+    {
+      "id": "IONBpkdz-QZiClX8RofXq",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "company talk is not sheduled properly",
+      "status": "open",
+      "createdAt": 1777441505358,
+      "departmentId": "Placement-officer",
+      "departmentName": "Placement Cell",
+      "agent": {
+        "department": "Placement Cell",
+        "urgency": "medium",
+        "summary": "Company talk scheduling issue",
+        "action": "Verify company talk schedule and coordinate with the company to reschedule if necessary"
+      }
+    },
+    {
+      "id": "YvsBwzNEMoDw2Ov8v3uic",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "i have paid for pvp but name is not there in list",
+      "status": "open",
+      "createdAt": 1777442911800,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "medium",
+        "summary": "Student has paid for PvP but their name is not listed",
+        "action": "Verify payment and update the list"
+      }
+    },
+    {
+      "id": "vG0xOYFhxUciTBJNfOXF-",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "fees paid for pvp but name not in list",
+      "status": "open",
+      "createdAt": 1777442953745,
+      "departmentId": "fees-incharge",
+      "departmentName": "Fee Office",
+      "agent": {
+        "department": "Fee Office",
+        "urgency": "medium",
+        "summary": "Student's name is not in the list despite paying fees for PVP",
+        "action": "Verify payment and update the list accordingly"
+      }
+    },
+    {
+      "id": "0iDa8BsDAau2js2-x85A7",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "no electricity in hostel",
+      "status": "open",
+      "createdAt": 1777442995908,
+      "departmentId": "Warden",
+      "departmentName": "Hostel Office",
+      "agent": {
+        "department": "Hostel Office",
+        "urgency": "high",
+        "summary": "No electricity in hostel",
+        "action": "Staff should immediately investigate and restore electricity to ensure student comfort and safety"
+      }
+    },
+    {
+      "id": "fRglKiKLEirNIHW-l81SZ",
+      "studentId": "MAR0gNSmORv8k-6U1wkGb",
+      "studentName": "sathwik pai",
+      "studentEmail": "sathwik@gmail.com",
+      "description": "academic issue",
+      "status": "open",
+      "createdAt": 1777443038324,
+      "departmentId": "dean-academic",
+      "departmentName": "Academic Affairs",
+      "agent": {
+        "department": "Academic Affairs",
+        "urgency": "medium",
+        "summary": "Student is experiencing an academic issue",
+        "action": "Contact student via email to gather more information about the issue"
       }
     }
   ],
@@ -185,6 +542,36 @@
       "id": "q2CF3SEBiHgBMD85WSw7i",
       "name": "sathwik pai",
       "email": "sathwikpai.is23@rvce.edu.in"
+    },
+    {
+      "id": "2RvA-KAXke0ryGxrkT-qE",
+      "name": "ada",
+      "email": "af"
+    },
+    {
+      "id": "0FOE_6A6MS9CDjCOYqlQw",
+      "name": "a,jbd",
+      "email": "akjdb"
+    },
+    {
+      "id": "xNtGRyGANUEQSV0yPg6Yi",
+      "name": "sathwik",
+      "email": "ajayreddym0@gmail.com"
+    },
+    {
+      "id": "Z9e-J6ErocRxtohNjfJRD",
+      "name": "Jackson Bird",
+      "email": "sak.c.b@outlook.com"
+    },
+    {
+      "id": "T39K-fqCrt5Mx66Hqr7Nh",
+      "name": "navya padiyar",
+      "email": "aojf"
+    },
+    {
+      "id": "MAR0gNSmORv8k-6U1wkGb",
+      "name": "sathwik pai",
+      "email": "sathwik@gmail.com"
     }
   ]
 }
